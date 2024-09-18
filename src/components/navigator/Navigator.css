@@ -1,6 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+
+
+
+nav {
+    width: 100%;
+    /*background-color: grey;*/
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    position: relative;
+}
+
 
 .nav-container {
-    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -9,17 +21,10 @@
     padding: 0 20px;
 }
 
-nav {
-    width: 100%;
-    background-color: grey;
-    display: flex;
-    justify-content: center;
-    height: 60px;
-    position: relative;
-}
+
 
 .nav-container h4 {
-    color: white;
+    color: black;
     margin: 0;
 }
 
@@ -29,6 +34,11 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    font-family: 'Poor Story', sans-serif; /* Pas het lettertype aan */
+    font-size: 32px; /* Stel de lettergrootte in */
+    font-weight: normal; /* Stel de letterdikte in (normal, bold, etc.) */
+    color: black; /* Zorg voor een leesbare kleur */
 }
 
 .nav-items li {
@@ -37,29 +47,37 @@ nav {
     cursor: pointer;
 }
 
-.nav-items li:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+.nav-items li a {
+    color: black; /* Standaard kleur */
+    text-decoration: none; /* Verwijder onderstreping als dat gewenst is */
 }
 
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .nav-items {
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-        color: #1a1a1a;
-    }
-
-    .nav-items li {
-        width: 100%;
-        text-align: left;
-    }
-
-    nav:hover .nav-items {
-        display: flex;
-    }
+.nav-items li a:hover {
+    color: darkgreen; /* Hover kleur */
 }
+
+.nav-items-log-in {
+    margin-left: 20px; /* Voeg wat ruimte toe tussen de nav-items en de log-in */
+    display: flex; /* Zorgt ervoor dat de li goed wordt uitgelijnd */
+    align-items: center; /* Centreer verticaal */
+}
+
+.nav-items-log-in li {
+    padding: 10px 20px; /* Zelfde padding als andere items */
+    display: flex; /* Zorgt ervoor dat de emoji en tekst goed worden uitgelijnd */
+    align-items: center; /* Centreer verticaal */
+}
+
+.nav-items-log-in li a {
+    color: black; /* Standaard kleur */
+    font-size: 32px;
+    text-decoration: none; /* Verwijder onderstreping */
+    transition: box-shadow 0.3s ease; /* Voeg een overgang toe voor een vloeiendere ervaring */
+}
+
+.nav-items-log-in li a:hover {
+    box-shadow: 0 0 10px lightgrey; /* Lichte glow-effect */
+}
+
+
+
