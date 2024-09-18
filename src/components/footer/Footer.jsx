@@ -1,5 +1,5 @@
 import React from "react";
-import "./Footer2.css";
+import "./Footer.css";
 import footer from "../../assets/footer t uilenstekkie geknipt.png"
 
 

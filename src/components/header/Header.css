@@ -1,3 +1,78 @@
-.header-img {
-    max-width: 100vw;
+/* Container van de gehele header */
+.custom-header {
+    position: relative; /* Zorgt ervoor dat de inhoud zich kan verplaatsen t.o.v. de banner */
+    width: 100%;
+    height: auto; /* Automatische hoogte gebaseerd op de inhoud */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible; /* Zorg ervoor dat de cirkel niet wordt afgesneden */
 }
+
+/* Afbeelding van de header op de achtergrond */
+.header-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Zorgt ervoor dat de afbeelding netjes past */
+    z-index: 1; /* Achtergrond blijft achter de content */
+}
+
+/* Container voor de cirkel en tekst, absoluut gepositioneerd over de afbeelding */
+.header-content {
+    position: absolute; /* Zorgt ervoor dat de inhoud boven de afbeelding staat */
+    top: clamp(10vh, 20vh, 30%); /* Dynamische verticale positie van de cirkel */
+    left: 50%; /* Plaatst de cirkel horizontaal in het midden */
+    transform: translateX(-50%); /* Zorgt voor horizontale centrering */
+    z-index: 2; /* Zorgt ervoor dat de content boven de afbeelding staat */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* Cirkel voor het logo en de tekst */
+.logo-circle {
+    position: relative;
+    width: clamp(350px, 30vw, 700px); /* Dynamische grootte van de cirkel */
+    height: clamp(350px, 30vw, 700px); /* Zorgt ervoor dat het een cirkel blijft */
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%; /* Maakt het een cirkel */
+    display: flex;
+    flex-direction: column; /* Zet de tekst en het logo onder elkaar */
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Eventuele ruimte tussen de rand van de cirkel en de inhoud */
+    box-sizing: border-box;
+}
+
+
+
+/* Logo afbeelding binnen de cirkel */
+.logo img {
+    width: clamp(350px, 20vw, 650px); /* Dynamische grootte van het logo */
+    height: auto; /* Zorgt ervoor dat de verhoudingen van het logo behouden blijven */
+    /*max-width: 100%; !* Zorg ervoor dat het logo niet groter wordt dan de cirkel *!*/
+}
+
+
+.text-top{
+    margin-top: 30px;
+}
+
+.text-bottom{
+    margin-bottom: 30px;
+}
+
+
+
+/* Tekst onder het logo */
+.text-bottom,
+.text-top{
+    font-size: clamp(22px, 2vw, 40px);
+    margin-top: 10px;
+
+    color: black;
+}
+
+

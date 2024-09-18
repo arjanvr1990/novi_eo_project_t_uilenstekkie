@@ -15,7 +15,7 @@ nav {
 .nav-container {
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
     width: 100%;
     padding: 0 20px;
@@ -36,7 +36,7 @@ nav {
     align-items: center;
 
     font-family: 'Poor Story', sans-serif; /* Pas het lettertype aan */
-    font-size: 32px; /* Stel de lettergrootte in */
+    font-size: clamp(24px, 1vw + 0.5rem, 32px);
     font-weight: normal; /* Stel de letterdikte in (normal, bold, etc.) */
     color: black; /* Zorg voor een leesbare kleur */
 }
