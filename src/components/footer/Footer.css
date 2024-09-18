@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+
+/* Zorg ervoor dat de footer de volledige breedte inneemt */
+.footer {
+    position: relative; /* Voor positionering van overlappende elementen */
+}
+
+.footer-banner {
+    width: 100%;
+    background: url('../../assets/footer t uilenstekkie geknipt.png') no-repeat center center;
+    background-size: cover; /* Zorg dat de afbeelding de hele achtergrond bedekt */
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+    z-index: 1; /* Zorg ervoor dat de banner achter de inhoud staat */
+}
+
+.footer-container {
+    position: relative; /* Zorgt ervoor dat de container boven de banner komt */
+    max-width: 100%;
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    z-index: 2; /* Zorg ervoor dat de tekst boven de achtergrondafbeelding staat */
+
+    font-family: 'Poor Story', sans-serif; /* Pas het lettertype aan */
+    font-size: 32px; /* Stel de lettergrootte in */
+    font-weight: normal; /* Stel de letterdikte in (normal, bold, etc.) */
+    color: white; /* Zorg voor een leesbare kleur */
+    text-align: center;
+}
+
+
+
+/* Voorkomt dat footer-items te dicht bij de rand zitten */
+.footer-items {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 200px;
+}
+
+/* Style voor de navigatielinks in de footer */
+.footer-nav, .footer-adres {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav li a,
+.footer-adres li a {
+    color: white; /* Standaard kleur */
+    text-decoration: none; /* Verwijder onderstreping als dat gewenst is */
+}
+
+.footer-nav li a:hover,
+.footer-adres li a:hover {
+    color: black; /* Hover kleur */
+}
+
+
+
