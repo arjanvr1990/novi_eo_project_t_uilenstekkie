@@ -4,6 +4,7 @@ import Navigator from "./components/navigator/Navigator.jsx";
 import Header from  "./components/header/Header.jsx";
 import Footer from "./components/footer/Footer.jsx";
 
+
 function App() {
 
 
@@ -12,6 +13,7 @@ function App() {
             <Navigator/>
             <Header/>
             <Footer/>
+
 
         </div>
     )

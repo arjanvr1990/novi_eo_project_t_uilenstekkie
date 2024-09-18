@@ -1,33 +1,40 @@
 import React from "react";
-import "./Footer.css";
-
+import "./Footer2.css";
+import footer from "../../assets/footer t uilenstekkie geknipt.png"
 
 
 function Footer() {
     return (
 
-
-
-        <footer className="footer">
-            <div className="footer-banner">
-                <div className="footer-container">
-                    <div className="footer-items">
-                        <ul className="footer-nav">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Omgeving</a></li>
-                            <li><a href="#">Prijzen</a></li>
-                            <li><a href="#">Contact</a></li>
+        <footer className="custom-footer">
+            <div className="image-container">
+                <img src={footer} alt="Uil en camping"/>
+                <div className="content-wrapper">
+                    <nav className="navigation">
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#omgeving">Omgeving</a></li>
+                            <li><a href="#tarieven">Tarieven</a></li>
+                            <li><a href="#reserveren">Reserveren</a></li>
+                            <li><a href="#contact">Contact</a></li>
                         </ul>
-                        <ul className="footer-adres">
-                            <li><a href="#">adres regel 1</a></li>
-                            <li><a href="#">adres regel 2</a></li>
-                            <li><a href="#">telefoonnummer</a></li>
-                            <li><a href="#">emailadres</a></li>
+                    </nav>
+                    <div className="contact-info">
+                        <ul>
+                            <li><a href="#">Termietergouw 1</a></li>
+                            <li><a href="#">1027AD </a></li>
+                            <li><a href="#"> Amsterdam</a></li>
+                            <li><a href="#">+31 6 12345678</a></li>
+                            <li><a href="#">info@example.com</a></li>
+
                         </ul>
+
                     </div>
                 </div>
             </div>
         </footer>
+
+
     );
 }
 
