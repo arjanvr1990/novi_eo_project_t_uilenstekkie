@@ -44,6 +44,7 @@
     align-items: center;
     padding: 20px; /* Eventuele ruimte tussen de rand van de cirkel en de inhoud */
     box-sizing: border-box;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
 }
 
 
