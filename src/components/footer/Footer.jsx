@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import footer from "../../assets/footer t uilenstekkie geknipt.png"
+import footer from "../../assets/footer/footer t uilenstekkie geknipt.png"
 
 
 function Footer() {

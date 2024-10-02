@@ -1,12 +1,14 @@
 import React from "react";
 import "./Header.css";
-import header from "../../assets/banner header t uilenstekkie geknipt.png";
-import logo from "../../assets/t uillenstekkie logo.png";
+import header from "../../assets/banner/banner header t uilenstekkie geknipt.png";
+import logo from "../../assets/banner/t uillenstekkie logo.png";
 
 function Header() {
     return (
         <>
             <header className="custom-header">
+
+                {/*goede beschrijving afbeelding toevoegen*/}
                 <img className="header-image" src={header} alt="Beschrijving van de afbeelding"  />
                 <div className="header-content">
                     <div className="logo-circle">

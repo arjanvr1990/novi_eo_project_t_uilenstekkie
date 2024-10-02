@@ -15,6 +15,7 @@ import Footer from "./components/footer/Footer.jsx";
 function App() {
     return (
         <>
+            <div className="app-container">
             <Navigation />
             <Header />
             <Routes>
@@ -25,6 +26,7 @@ function App() {
                 <Route path="/contact" element={<Contact />}/>
             </Routes>
             <Footer />
+            </div>
         </>
     );
 }

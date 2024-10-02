@@ -11,7 +11,7 @@
 .image-container {
     position: relative;
     width: 100%;
-    max-width: 1800px; /* Pas aan voor jouw ontwerp */
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -42,12 +42,12 @@
 .content-wrapper li {
     margin-bottom: 10px;
     margin-left: 100px;
-    font-size: clamp(16px, 1vw + 0.5rem, 32px);
+    font-size: clamp(12px, 1vw + 0.5rem, 20px);
     text-align: center;
 
-    font-family: 'Poor Story', sans-serif; /* Pas het lettertype aan */
-    font-weight: normal; /* Stel de letterdikte in (normal, bold, etc.) */
-    color: white; /* Zorg voor een leesbare kleur */
+    font-family: 'Poor Story', sans-serif;
+    font-weight: normal;
+    color: white;
 
 }
 

@@ -1,29 +1,29 @@
-/* Container van de gehele header */
 .custom-header {
-    position: relative; /* Zorgt ervoor dat de inhoud zich kan verplaatsen t.o.v. de banner */
+    position: relative;
     width: 100%;
-    height: auto; /* Automatische hoogte gebaseerd op de inhoud */
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: visible; /* Zorg ervoor dat de cirkel niet wordt afgesneden */
+    overflow: visible;
 }
 
-/* Afbeelding van de header op de achtergrond */
+
 .header-image {
     width: 100%;
     height: auto;
-    object-fit: cover; /* Zorgt ervoor dat de afbeelding netjes past */
-    z-index: 1; /* Achtergrond blijft achter de content */
+    object-fit: cover;
+    z-index: var(--z-content);
 }
 
-/* Container voor de cirkel en tekst, absoluut gepositioneerd over de afbeelding */
+
 .header-content {
-    position: absolute; /* Zorgt ervoor dat de inhoud boven de afbeelding staat */
-    top: clamp(10vh, 20vh, 30%); /* Dynamische verticale positie van de cirkel */
-    left: 50%; /* Plaatst de cirkel horizontaal in het midden */
-    transform: translateX(-50%); /* Zorgt voor horizontale centrering */
-    z-index: 2; /* Zorgt ervoor dat de content boven de afbeelding staat */
+    position: absolute;
+    /*top: clamp(10vh, 20vh, 30%);*/
+    top: 7vw;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: var(--z-modal);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,34 +31,36 @@
 }
 
 
-/* Cirkel voor het logo en de tekst */
+
 .logo-circle {
     position: relative;
-    width: clamp(350px, 30vw, 700px); /* Dynamische grootte van de cirkel */
-    height: clamp(350px, 30vw, 700px); /* Zorgt ervoor dat het een cirkel blijft */
+    width: clamp(250px, 25vw, 400px);
+    height: clamp(250px, 25vw, 400px);
     background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 50%; /* Maakt het een cirkel */
+    border-radius: 50%;
     display: flex;
-    flex-direction: column; /* Zet de tekst en het logo onder elkaar */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px; /* Eventuele ruimte tussen de rand van de cirkel en de inhoud */
+    padding: 20px;
     box-sizing: border-box;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
 }
 
 
 
-/* Logo afbeelding binnen de cirkel */
+
 .logo img {
-    width: clamp(350px, 20vw, 650px); /* Dynamische grootte van het logo */
-    height: auto; /* Zorgt ervoor dat de verhoudingen van het logo behouden blijven */
-    /*max-width: 100%; !* Zorg ervoor dat het logo niet groter wordt dan de cirkel *!*/
+    /*width: clamp(350px, 30vw, 600px);*/
+    /*height: auto;*/
+    width: 100%;
+    padding: 1vw;
+
 }
 
 
 .text-top{
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .text-bottom{
@@ -67,12 +69,11 @@
 
 
 
-/* Tekst onder het logo */
+
 .text-bottom,
 .text-top{
-    font-size: clamp(22px, 2vw, 40px);
+    font-size: clamp(15px, 1.5vw, 20px);
     margin-top: 10px;
-
     color: black;
 }
 

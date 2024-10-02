@@ -1,12 +1,28 @@
-import Navigator from "../../components/navigator/Navigator.jsx";
-import Header from "../../components/header/Header.jsx";
-import Footer from "../../components/footer/Footer.jsx";
-import React from "react";
+import "./Home.css"
+import Background from "../../components/background/Background.jsx";
 
 function Home() {
 
     return(
-    <h2>Home</h2>
+        <>
+
+
+        <div className="parent-background-container">
+            <Background />
+            <div className="background-content">
+                <h2 className="content">Home</h2>
+
+
+            </div>
+
+        </div>
+
+
+
+
+        </>
+
+
 
 
 
