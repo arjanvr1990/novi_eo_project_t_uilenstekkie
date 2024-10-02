@@ -1,0 +1,25 @@
+
+
+
+.app-container {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .app-container {
+        padding: 0 5px;
+    }
+}
+
+

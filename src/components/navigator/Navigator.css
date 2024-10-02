@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
 
-
+h2 {
+    color: #1a1a1a;
+}
 
 nav {
     width: 100%;
@@ -77,6 +79,14 @@ nav {
 
 .nav-items-log-in li a:hover {
     box-shadow: 0 0 10px lightgrey; /* Lichte glow-effect */
+}
+
+.active-menu-link {
+    border-bottom: 1px solid white;
+}
+
+.default-menu-link {
+    border-bottom: 1px solid transparent;
 }
 
 

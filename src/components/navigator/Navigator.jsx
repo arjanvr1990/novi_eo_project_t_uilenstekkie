@@ -1,5 +1,6 @@
 import React from 'react';
 import './Navigator.css';
+import {NavLink} from "react-router-dom";
 
 function Navigation() {
     return (
@@ -8,11 +9,40 @@ function Navigation() {
                 {/*<h4>🏕️ Mini Camping 't Uilenstekkie</h4>*/}
 
                 <ul className="nav-items">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Omgeving</a></li>
-                    <li><a href="#">Tarieven</a></li>
-                    <li><a href="#">Reserveren</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li>
+                        <NavLink
+                            className={({isActive}) => isActive === true ? "active-menu-link" : "default-menu-link"}
+                            to="/">
+                            Home
+                        </NavLink>
+                    </li>
+                    <li><NavLink
+                        className={({isActive}) => isActive === true ? "active-menu-link" : "default-menu-link"}
+                        to="/omgeving">
+                        Omgeving
+                    </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                        className={({isActive}) => isActive === true ? "active-menu-link" : "default-menu-link"}
+                        to="/tarieven">
+                        Tarieven
+                    </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                            className={({isActive}) => isActive === true ? "active-menu-link" : "default-menu-link"}
+                            to="/reserveren">
+                            Reserveren
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                        className={({isActive}) => isActive === true ? "active-menu-link" : "default-menu-link"}
+                        to="/contact">
+                        Contact
+                    </NavLink>
+                    </li>
                 </ul>
 
             </div>
