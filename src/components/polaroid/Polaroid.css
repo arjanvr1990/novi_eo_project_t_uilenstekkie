@@ -1,0 +1,50 @@
+.polaroid-container {
+    background-color: white; /* Achtergrondkleur van de polaroid */
+    padding: 10px;
+    margin: 10px; /* Geef wat marge tussen de polaroids */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: inline-block; /* Zorgt ervoor dat ze correct worden weergegeven */
+    border: 1px solid #ddd; /* Lichte rand om de polaroid */
+    border-radius: 5px; /* Optionele afgeronde hoeken */
+    width: calc(30% - 20px); /* Brete van de polaroid, pas deze aan voor verschillende weergave */
+    max-width: 400px; /* Maximale breedte van de polaroid */
+    max-height: 500px; /* Maximale hoogte van de polaroid */
+    overflow: hidden; /* Zorg ervoor dat de inhoud niet buiten de container valt */
+    transition: transform 0.3s ease, z-index 0.3s ease; /* Overgang voor hover-effect */
+}
+
+.polaroid-container:hover {
+    transform: scale(1.1); /* Vergroot de polaroid bij hover */
+    z-index: 10; /* Breng het naar de voorgrond bij hover */
+}
+
+.polaroid-img-container {
+    overflow: hidden;
+    max-height: 400px;
+}
+
+.polaroid-img {
+    width: 100%; /* Zorg ervoor dat de afbeelding de volledige breedte van de container volgt */
+    height: auto;
+    display: block;
+}
+
+.polaroid-title {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Media query voor kleinere schermen */
+@media (max-width: 768px) {
+    .polaroid-container {
+        width: calc(45% - 20px); /* Maak de polaroids breder bij kleinere schermen */
+    }
+}
+
+@media (max-width: 480px) {
+    .polaroid-container {
+        width: calc(90% - 20px); /* Maak de polaroids nog breder voor mobiele weergave */
+    }
+}

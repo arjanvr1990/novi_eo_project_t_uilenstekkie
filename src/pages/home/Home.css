@@ -6,7 +6,7 @@
 }
 
 .background-content {
-    background-color: #646cff; /* Tijdelijke kleur om zichtbaarheid te controleren */
+    /*background-color: #646cff; */
     position: absolute;
     z-index: 1;
     color: white;
@@ -19,8 +19,11 @@
 
 
 
-.content {
-    z-index: 10; /* Dit is niet nodig omdat .background-content al een hogere z-index heeft */
-    color: white; /* Kleur van de tekst */
-}
+/*.polaroid-container-background {*/
+/*    position: relative; !* Zorgt ervoor dat de polaroids zich binnen deze container kunnen positioneren *!*/
+/*    width: 100%; !* Of stel een vaste breedte in, afhankelijk van je ontwerp *!*/
+/*    height: 100vh; !* Zorg ervoor dat het de volledige hoogte van de achtergrond bedekt *!*/
+/*    overflow: hidden; !* Zorg ervoor dat polaroids niet buiten deze container vallen *!*/
+/*}*/
+
 

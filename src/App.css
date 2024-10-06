@@ -21,11 +21,14 @@ body {
 
 :root {
   --z-bacground-color: -10;
+
   --z-background: -1;
   --z-content: 1;
   --z-modal: 10;
   --z-tooltip: 100;
 }
+
+
 
 
 
