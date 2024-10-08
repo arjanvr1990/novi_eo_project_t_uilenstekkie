@@ -1,29 +1,20 @@
-
-.parent-background-container {
-    position: relative; /* Houdt de positionering voor de achtergrond container correct */
-    width: 100%;
-    height: 100vh; /* Zorg ervoor dat de parent-container de volledige hoogte van het scherm heeft */
+.polaroid-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.background-content {
-    /*background-color: #646cff; */
-    position: absolute;
-    z-index: 1;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+.container-polaroids {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
 }
 
 
-
-/*.polaroid-container-background {*/
-/*    position: relative; !* Zorgt ervoor dat de polaroids zich binnen deze container kunnen positioneren *!*/
-/*    width: 100%; !* Of stel een vaste breedte in, afhankelijk van je ontwerp *!*/
-/*    height: 100vh; !* Zorg ervoor dat het de volledige hoogte van de achtergrond bedekt *!*/
-/*    overflow: hidden; !* Zorg ervoor dat polaroids niet buiten deze container vallen *!*/
-/*}*/
-
-
+.container-polaroids a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -8,7 +8,7 @@ function Footer() {
 
         <footer className="custom-footer">
             <div className="image-container">
-                <img src={footer} alt="Uil en camping"/>
+                <img className="img-footer" src={footer} alt="Uil en camping"/>
                 <div className="content-wrapper">
                     <nav className="navigation">
                         <ul>

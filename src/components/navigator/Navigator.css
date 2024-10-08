@@ -38,7 +38,7 @@ nav {
     align-items: center;
 
     font-family: 'Poor Story', sans-serif; /* Pas het lettertype aan */
-    font-size: clamp(24px, 1vw + 0.5rem, 32px);
+    font-size: clamp(18px, 1vw + 0.5rem, 32px);
     font-weight: normal; /* Stel de letterdikte in (normal, bold, etc.) */
     color: black; /* Zorg voor een leesbare kleur */
 }
@@ -55,30 +55,30 @@ nav {
 }
 
 .nav-items li a:hover {
-    color: darkgreen; /* Hover kleur */
+    color: darkgreen;
 }
 
 .nav-items-log-in {
-    margin-left: 20px; /* Voeg wat ruimte toe tussen de nav-items en de log-in */
-    display: flex; /* Zorgt ervoor dat de li goed wordt uitgelijnd */
-    align-items: center; /* Centreer verticaal */
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .nav-items-log-in li {
-    padding: 10px 20px; /* Zelfde padding als andere items */
-    display: flex; /* Zorgt ervoor dat de emoji en tekst goed worden uitgelijnd */
-    align-items: center; /* Centreer verticaal */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
 }
 
 .nav-items-log-in li a {
-    color: black; /* Standaard kleur */
+    color: black;
     font-size: 32px;
-    text-decoration: none; /* Verwijder onderstreping */
-    transition: box-shadow 0.3s ease; /* Voeg een overgang toe voor een vloeiendere ervaring */
+    text-decoration: none;
+    transition: box-shadow 0.3s ease;
 }
 
 .nav-items-log-in li a:hover {
-    box-shadow: 0 0 10px lightgrey; /* Lichte glow-effect */
+    box-shadow: 0 0 10px lightgrey;
 }
 
 .active-menu-link {
@@ -89,5 +89,42 @@ nav {
     border-bottom: 1px solid transparent;
 }
 
+
+/* Voor kleinere schermen (tablets en kleiner) */
+@media (max-width: 768px) {
+    .nav-container {
+        justify-content: center; /* Centreer de navigatie-items */
+    }
+
+    .nav-items {
+        flex-direction: row; /* Maak de items verticaal */
+        align-items: center; /* Centreer items verticaal */
+        flex-basis: auto; /* Zet flex-basis op auto voor responsiviteit */
+    }
+
+    .nav-items li {
+        padding: 10px; /* Verminder padding voor kleinere schermen */
+    }
+
+    .nav-items-log-in {
+        margin-left: 0; /* Verwijder de marge links op kleinere schermen */
+        margin-top: 10px; /* Voeg wat marge bovenaan toe */
+    }
+}
+
+/* Voor mobiele schermen */
+@media (max-width: 480px) {
+    .nav-items {
+        font-size: clamp(12px, 4vw, 24px); /* Verminder de font-grootte */
+    }
+
+    .nav-items li {
+        padding: 5px 10px; /* Verminder padding voor mobiele weergave */
+    }
+
+    .nav-items-log-in li {
+        padding: 5px 10px; /* Verminder padding voor de log-in sectie */
+    }
+}
 
 

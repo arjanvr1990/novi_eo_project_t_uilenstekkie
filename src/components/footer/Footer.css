@@ -15,9 +15,11 @@
     margin: 0 auto;
 }
 
-.image-container img {
+.img-footer {
     width: 100%;
     height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
 }
 
 .content-wrapper {
@@ -58,7 +60,7 @@
 }
 
 .content-wrapper li a:hover {
-    color: darkgreen; /* Hover kleur */
+    color: darkgreen;
 }
 
 
