@@ -4,24 +4,27 @@ import './Polaroid.css';
 
 function Polaroid({ image, title, alt, link }) {
     const generateRandomRotation = () => {
-        return Math.floor(Math.random() * 11) - 5; // Willekeurige waarde tussen -5 en 5 graden
+        return Math.floor(Math.random() * 11) - 5;
     };
 
-    const rotation = generateRandomRotation(); // Genereer een willekeurige rotatie
+    const rotation = generateRandomRotation();
+
+    const fonts = ['Beth Ellen', 'Crafty Girls', 'Fuzzy Bubbles'];
+    const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
 
     return (
-        <Link to={link} style={{ textDecoration: 'none' }}> {/* Link rond de polaroid */}
+        <Link to={link} style={{ textDecoration: 'none' }}>
             <div
                 className="polaroid-container"
                 style={{
-                    transform: `rotate(${rotation}deg)`, // Rotatie op de container
-                    transition: 'transform 0.3s ease', // Zorg ervoor dat de hover transitie soepel is
+                    transform: `rotate(${rotation}deg)`,
+                    transition: 'transform 0.3s ease',
                 }}
             >
                 <div className="polaroid-img-container">
                     <img className="polaroid-img" src={image} alt={alt} />
                 </div>
-                <h3 className="polaroid-title">{title}</h3>
+                <h3 className="polaroid-title" style={{ fontFamily: randomFont }}>{title}</h3>
             </div>
         </Link>
     );
