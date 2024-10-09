@@ -2,18 +2,14 @@ import "./Reservation.css"
 import Receipt from "../../components/receipt/Receipt.jsx";
 import NawtData from "../../components/nawtData/NawtData.jsx";
 
-function Reservation() {
-
-
-
-
+function Reservation({ reservationDetails }) {
     return (
         <div className="reservation-container">
             <div className="receipt-container">
                  <Receipt/>
             </div>
 
-            <NawtData/>
+            <NawtData reservationDetails={reservationDetails} />
         </div>
     );
 }

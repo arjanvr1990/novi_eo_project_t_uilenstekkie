@@ -1,17 +1,18 @@
 import React from 'react';
 import { useLocation } from "react-router-dom";
 import './Receipt.css';
-import useRandomRotation from "../../hooks/useRandomRotation/useRandomRotation.js"; // Vergeet niet de CSS te importeren
+import useRandomRotation from "../../hooks/useRandomRotation/useRandomRotation.js";
 
 function Receipt() {
     const rotation = useRandomRotation();
     const location = useLocation();
-    const { vehicle, hasCar, adults, children, electricity, totalPrice } = location.state || {};
+    const { reservationDetails } = location.state || {};
+    const { vehicle, hasCar, adults, children, electricity, totalPrice } = reservationDetails || {};
 
     return (
         <div className="receipt" style={{
-                transform: `rotate(${rotation}deg)`
-            }}>
+            transform: `rotate(${rotation}deg)`
+        }}>
             <h2>Tarieven</h2>
 
             <ul>

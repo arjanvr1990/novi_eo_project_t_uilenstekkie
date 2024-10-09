@@ -65,12 +65,10 @@ function PriceCalculator() {
     };
 
     const handleReserve = () => {
-
         if (!vehicle || adults < 1) {
             setErrorMessage('Je moet een kampeermiddel selecteren en minstens 1 volwassene invoeren.');
             return;
         }
-
 
         setErrorMessage('');
 
@@ -83,8 +81,17 @@ function PriceCalculator() {
             totalPrice: calculatePrice(),
         };
 
-        navigate('/reserveren', { state: reservationData });
+
+        navigate('/reserveren', { state: { reservationDetails: reservationData } });
+
+
+        setVehicle('');
+        setHasCar(false);
+        setAdults(1);
+        setChildren(0);
+        setElectricity(false);
     };
+
 
     return (
         <div className="price-calculator" style={{
@@ -126,7 +133,7 @@ function PriceCalculator() {
                             type="number"
                             min="1"
                             value={adults}
-                            onChange={(e) => setAdults(e.target.value)}
+                            onChange={(e) => setAdults(Number(e.target.value))}
                         />
                     </label>
                 </div>
@@ -138,7 +145,7 @@ function PriceCalculator() {
                             type="number"
                             min="0"
                             value={children}
-                            onChange={(e) => setChildren(e.target.value)}
+                            onChange={(e) => setChildren(Number(e.target.value))}
                         />
                     </label>
                 </div>

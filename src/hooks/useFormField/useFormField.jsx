@@ -12,12 +12,13 @@ const useFormField = (type, initialValue, placeholder, className = " ") => {
                 value={value}
                 placeholder={placeholder}
                 onChange={(e) => setValue(e.target.value)}
-                required={type !== 'text' || placeholder !== "Tussenvoegsel"}
+                required={type !== 'text' || (placeholder !== "Tussenvoegsel" && placeholder !== "Toevoeging")}
             />
         </label>
     );
 
-    return { value, onChange: (e) => setValue(e.target.value), inputField };
+
+    return { value, setValue, inputField };
 };
 
 export default useFormField;
