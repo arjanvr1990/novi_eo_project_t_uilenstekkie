@@ -1,68 +1,19 @@
-import React, { useState } from 'react';
-import {useLocation} from "react-router-dom";
+import "./Reservation.css"
 import Receipt from "../../components/receipt/Receipt.jsx";
+import NawtData from "../../components/nawtData/NawtData.jsx";
 
 function Reservation() {
 
 
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [arrivalDate, setArrivalDate] = useState('');
-    const [departureDate, setDepartureDate] = useState('');
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-    };
 
     return (
-        <div>
+        <div className="reservation-container">
+            <div className="receipt-container">
+                 <Receipt/>
+            </div>
 
-            <Receipt/>
-
-
-            <h2>NAWT Gegevens</h2>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Naam:
-                    <input
-                        type="text"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                    />
-                </label>
-
-                <label>
-                    E-mail:
-                    <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                </label>
-
-                <label>
-                    Datum van aankomst:
-                    <input
-                        type="date"
-                        value={arrivalDate}
-                        onChange={(e) => setArrivalDate(e.target.value)}
-                    />
-                </label>
-
-                <label>
-                    Datum van vertrek:
-                    <input
-                        type="date"
-                        value={departureDate}
-                        onChange={(e) => setDepartureDate(e.target.value)}
-                    />
-                </label>
-
-                <button type="submit">Verstuur</button>
-            </form>
-
-
+            <NawtData/>
         </div>
     );
 }

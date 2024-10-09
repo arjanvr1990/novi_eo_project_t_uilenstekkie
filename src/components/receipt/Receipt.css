@@ -1,38 +1,39 @@
 
 
 .receipt {
-    font-family: 'Courier Prime', monospace; /* Stel het lettertype in */
-    background-color: #f9f9f9; /* Achtergrondkleur van de kassabon */
-    border: 1px solid #ddd; /* Lichte rand */
-    border-radius: 5px; /* Ronde hoeken */
-    padding: 20px; /* Voeg wat padding toe */
-    width: 300px; /* Breedte van de kassabon */
-    margin: 20px auto; /* Centraal uitlijnen */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Schaduw effect */
+
+    font-family: 'Courier Prime', monospace;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    width: 300px;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .receipt h1, .receipt h2 {
-    text-align: center; /* Centreer de titels */
-    margin: 0; /* Verwijder standaard marges */
+    text-align: center;
+    margin: 0;
 }
 
 .receipt ul {
-    list-style-type: none; /* Verwijder opsommingstekens */
-    padding: 0; /* Verwijder padding */
+    list-style-type: none;
+    padding: 0;
 }
 
 .receipt li {
-    padding: 5px 0; /* Voeg wat ruimte tussen de items toe */
-    border-bottom: 1px dashed #ccc; /* Dotted lijn onder elk item */
+    padding: 5px 0;
+    border-bottom: 1px dashed #ccc;
 }
 
 .receipt li:last-child {
-    border-bottom: none; /* Verwijder de lijn van het laatste item */
+    border-bottom: none;
 }
 
 .receipt .total {
-    font-weight: bold; /* Maak de totale prijs vet */
-    font-size: 1.2em; /* Grotere tekstgrootte voor de totale prijs */
-    text-align: center; /* Centreer de totale prijs */
-    margin-top: 10px; /* Ruimte boven de totale prijs */
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 10px;
 }
