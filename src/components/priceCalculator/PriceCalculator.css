@@ -10,7 +10,7 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
     background-color: #fff;
     background-size: cover;
-    font-size: 32px;
+    font-size: 24px;
 }
 
 
@@ -33,7 +33,7 @@
 }
 
 .price-calculator input[type="number"]{
-    font-size: 32px;
+    font-size: 24px;
     width: 80px;
 }
 
@@ -67,19 +67,19 @@
     color: darkgreen;
 }
 
-/* Stijl voor de knoppen (indien gebruikt) */
+
 .price-calculator button {
-    margin-top: 20px; /* Ruimte boven de knop */
-    padding: 10px; /* Padding voor de knop */
-    background-color: #007bff; /* Blauwe achtergrond */
-    color: white; /* Witte tekst */
-    border: none; /* Geen rand */
-    border-radius: 4px; /* Afgeronde hoeken */
-    cursor: pointer; /* Cursor pointer voor interactie */
-    transition: background-color 0.3s; /* Overgang voor hover effect */
+    margin-top: 20px;
+    padding: 10px;
+    background-color: darkgreen;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-/* Hover effect voor de knop */
+
 .price-calculator button:hover {
-    /*background-color: #0056b3; !* Donkerdere blauwe kleur bij hover *!*/
+    background-color: darkolivegreen;
 }

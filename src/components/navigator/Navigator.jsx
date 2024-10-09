@@ -31,13 +31,6 @@ function Navigation() {
                     </li>
                     <li>
                         <NavLink
-                            className={({isActive}) => isActive === true ? "active-menu-link" : "default-menu-link"}
-                            to="/reserveren">
-                            Reserveren
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
                         className={({isActive}) => isActive === true ? "active-menu-link" : "default-menu-link"}
                         to="/contact">
                         Contact

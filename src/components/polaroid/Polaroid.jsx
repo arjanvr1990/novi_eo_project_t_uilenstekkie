@@ -1,16 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './Polaroid.css';
+import useRandomRotation from "../../hooks/useRandomRotation/useRandomRotation.js";
+import useRandomFont from "../../hooks/useRandomFont/useRandomFont.js";
 
 function Polaroid({ image, title, alt, link }) {
-    const generateRandomRotation = () => {
-        return Math.floor(Math.random() * 11) - 5;
-    };
-
-    const rotation = generateRandomRotation();
-
-    const fonts = ['Beth Ellen', 'Crafty Girls', 'Fuzzy Bubbles'];
-    const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
+    const rotation = useRandomRotation();
+    const randomFont = useRandomFont();
 
     return (
         <Link to={link} style={{ textDecoration: 'none' }}>
