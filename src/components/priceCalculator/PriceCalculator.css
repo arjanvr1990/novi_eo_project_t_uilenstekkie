@@ -1,0 +1,85 @@
+
+
+
+.price-calculator {
+    max-width: 1000px;
+    margin: 200px auto;
+    padding: 20px; ]
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    background-color: #fff;
+    background-size: cover;
+    font-size: 32px;
+}
+
+
+
+.price-calculator form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.price-calculator input[type="number"],
+.price-calculator input[type="radio"],
+.price-calculator input[type="checkbox"]{
+    margin: 20px;
+    padding: 10px;
+    color: #1a1a1a;
+    background-color: transparent;
+    border: 1px none #dddddd;
+    border-radius: 4px;
+}
+
+.price-calculator input[type="number"]{
+    font-size: 32px;
+    width: 80px;
+}
+
+.price-calculator input[type="radio"],
+.price-calculator input[type="checkbox"]{
+    transform: scale(1.5);
+    color: darkgreen;
+}
+
+.person-calculator label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.person-calculator {
+    margin-left: 20px;
+}
+
+
+
+
+.price-calculator label {
+    margin: 5px 0;
+    color: #555;
+}
+
+
+.price-calculator h2 {
+    text-align: center;
+    color: darkgreen;
+}
+
+/* Stijl voor de knoppen (indien gebruikt) */
+.price-calculator button {
+    margin-top: 20px; /* Ruimte boven de knop */
+    padding: 10px; /* Padding voor de knop */
+    background-color: #007bff; /* Blauwe achtergrond */
+    color: white; /* Witte tekst */
+    border: none; /* Geen rand */
+    border-radius: 4px; /* Afgeronde hoeken */
+    cursor: pointer; /* Cursor pointer voor interactie */
+    transition: background-color 0.3s; /* Overgang voor hover effect */
+}
+
+/* Hover effect voor de knop */
+.price-calculator button:hover {
+    /*background-color: #0056b3; !* Donkerdere blauwe kleur bij hover *!*/
+}
