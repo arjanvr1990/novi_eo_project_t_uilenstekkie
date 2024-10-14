@@ -40,8 +40,16 @@ function Navigation() {
 
             </div>
             <ul className="nav-items-log-in">
-                <li><a href="#">🔑</a></li> {/* Voeg hier de emoji toe */}
+                <li>
+                <NavLink
+                    className={({isActive}) => isActive === true ? "active-menu-link" : "default-menu-link"}
+                    to="/admin">
+                    🔑
+            </NavLink>
+            </li>
             </ul>
+
+
         </nav>
     );
 }

@@ -1,6 +1,6 @@
 .nawt-data-container {
     max-width: 800px;
-    margin: 200px auto;
+    margin: 200px 20px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -26,12 +26,7 @@
     gap: 15px;
 }
 
-.nawt-data-label {
-    display: flex;
-    flex-direction: column;
-    margin: 5px 0;
-    color: #555;
-}
+
 
 
 .nawt-data-input {
@@ -44,25 +39,6 @@
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.nawt-data-input.short {
-    width: 100px;
-}
-
-.nawt-data-input.medium {
-    width: 200px;
-}
-
-.nawt-data-input.long {
-    width: 300px;
-}
-
-.nawt-data-input.house-number {
-    width: 70px;
-}
-
-.nawt-data-input.zip-code {
-    width: 120px;
-}
 
 .nawt-data-button {
     margin-top: 20px;
@@ -82,4 +58,23 @@
 .disclaimer {
     font-family: Arial, serif;
     font-size: 14px;
+}
+
+@media (max-width: 720px) {
+
+    .nawt-data-name-container,
+    .nawt-data-address-container,
+    .nawt-data-location-container,
+    .nawt-data-date-container,
+    .nawt-data-contact-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .nawt-data-container {
+    margin: 50px;
+    }
+
+
 }

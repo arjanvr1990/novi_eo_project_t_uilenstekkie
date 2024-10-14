@@ -89,40 +89,40 @@ nav {
 }
 
 
-/* Voor kleinere schermen (tablets en kleiner) */
+
 @media (max-width: 768px) {
     .nav-container {
-        justify-content: center; /* Centreer de navigatie-items */
+        justify-content: center;
     }
 
     .nav-items {
-        flex-direction: row; /* Maak de items verticaal */
-        align-items: center; /* Centreer items verticaal */
-        flex-basis: auto; /* Zet flex-basis op auto voor responsiviteit */
+        flex-direction: row;
+        align-items: center;
+        flex-basis: auto;
     }
 
     .nav-items li {
-        padding: 10px; /* Verminder padding voor kleinere schermen */
+        padding: 10px;
     }
 
     .nav-items-log-in {
-        margin-left: 0; /* Verwijder de marge links op kleinere schermen */
-        margin-top: 10px; /* Voeg wat marge bovenaan toe */
+        margin-left: 0;
+        margin-top: 10px;
     }
 }
 
-/* Voor mobiele schermen */
+
 @media (max-width: 480px) {
     .nav-items {
-        font-size: clamp(12px, 4vw, 24px); /* Verminder de font-grootte */
+        font-size: clamp(12px, 4vw, 24px);
     }
 
     .nav-items li {
-        padding: 5px 10px; /* Verminder padding voor mobiele weergave */
+        padding: 5px 10px;
     }
 
     .nav-items-log-in li {
-        padding: 5px 10px; /* Verminder padding voor de log-in sectie */
+        padding: 5px 10px;
     }
 }
 

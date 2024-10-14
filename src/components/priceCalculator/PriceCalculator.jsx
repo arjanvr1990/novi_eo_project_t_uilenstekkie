@@ -9,7 +9,7 @@ function PriceCalculator() {
     const rotation = useRandomRotation();
     const randomFont = useRandomFont();
 
-    // State Hooks
+
     const [vehicle, setVehicle] = useState('');
     const [hasCar, setHasCar] = useState(false);
     const [adults, setAdults] = useState(1);
@@ -105,7 +105,6 @@ function PriceCalculator() {
             transform: `rotate(${rotation}deg)`,
             fontFamily: randomFont,
         }}>
-            <h1>Kamp Prijs Calculator</h1>
             <form>
                 <h2>Tarieven:</h2>
                 <ul>

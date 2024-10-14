@@ -10,7 +10,7 @@ function Home() {
                 <div className="container-polaroids"> {/* Container voor polaroids */}
                     <Polaroid image={defaultImg} title="Omgeving" alt="default img" link="/omgeving" />
                     <Polaroid image={defaultImg} title="Tarieven" alt="default img" link="/tarieven" />
-                    <Polaroid image={defaultImg} title="Weerbericht" alt="default img" link="/weerbericht" />
+                    <Polaroid image={defaultImg} title="Weerbericht" alt="default img" link="/weer" />
                     <Polaroid image={defaultImg} title="Foto's" alt="default img" link="/fotos" />
                     <Polaroid image={defaultImg} title="Contact" alt="default img" link="/contact" />
 
