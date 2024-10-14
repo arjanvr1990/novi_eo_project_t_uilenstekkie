@@ -1,5 +1,5 @@
 import "./PriceCalculator.css";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useRandomRotation from "../../hooks/useRandomRotation/useRandomRotation.js";
 import useRandomFont from "../../hooks/useRandomFont/useRandomFont.js";
@@ -8,12 +8,15 @@ function PriceCalculator() {
     const navigate = useNavigate();
     const rotation = useRandomRotation();
     const randomFont = useRandomFont();
+
+    // State Hooks
     const [vehicle, setVehicle] = useState('');
     const [hasCar, setHasCar] = useState(false);
     const [adults, setAdults] = useState(1);
     const [children, setChildren] = useState(0);
     const [electricity, setElectricity] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
+    const [totalPrice, setTotalPrice] = useState(0);
 
     const prices = {
         adult: 7.00,
@@ -27,42 +30,48 @@ function PriceCalculator() {
         car: 1.00,
     };
 
+
     const calculatePrice = () => {
-        let totalPrice = 0;
+        let price = 0;
 
         switch (vehicle) {
             case 'Camper tot 5m':
-                totalPrice += prices.smallCamper;
+                price += prices.smallCamper;
                 break;
             case 'Camper tot 6m':
-                totalPrice += prices.largeCamper;
+                price += prices.largeCamper;
                 break;
             case 'Caravan tot 6m':
-                totalPrice += prices.caravan;
+                price += prices.caravan;
                 break;
             case 'Tent Groot':
-                totalPrice += prices.largeTent;
+                price += prices.largeTent;
                 break;
             case 'Tent Klein':
-                totalPrice += prices.smallTent;
+                price += prices.smallTent;
                 break;
             default:
                 break;
         }
 
-        totalPrice += adults * prices.adult;
-        totalPrice += children * prices.child;
+        price += adults * prices.adult;
+        price += children * prices.child;
 
         if (electricity) {
-            totalPrice += prices.electricity;
+            price += prices.electricity;
         }
 
         if (hasCar) {
-            totalPrice += prices.car;
+            price += prices.car;
         }
 
-        return totalPrice.toFixed(2);
+        return price.toFixed(2);
     };
+
+
+    useEffect(() => {
+        setTotalPrice(calculatePrice());
+    }, [vehicle, hasCar, adults, children, electricity]);
 
     const handleReserve = () => {
         if (!vehicle || adults < 1) {
@@ -78,9 +87,8 @@ function PriceCalculator() {
             adults,
             children,
             electricity,
-            totalPrice: calculatePrice(),
+            totalPrice,
         };
-
 
         navigate('/reserveren', { state: { reservationDetails: reservationData } });
 
@@ -91,7 +99,6 @@ function PriceCalculator() {
         setChildren(0);
         setElectricity(false);
     };
-
 
     return (
         <div className="price-calculator" style={{
@@ -160,7 +167,7 @@ function PriceCalculator() {
                 </label>
             </form>
 
-            <h2>Totaal Prijs: € {calculatePrice()} per nacht</h2>
+            <h2>Totaal Prijs: € {totalPrice} per nacht</h2>
 
             {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
 
@@ -170,3 +177,5 @@ function PriceCalculator() {
 }
 
 export default PriceCalculator;
+
+
