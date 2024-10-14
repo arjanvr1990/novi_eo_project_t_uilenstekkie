@@ -20,7 +20,7 @@ function ContactForm() {
     const message = useFormField("textarea", "", "Bericht", "message");
 
     const sendEmail = (contactData) => {
-        return emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", contactData, "YOUR_USER_ID");
+        return emailjs.send("service_28tjxuw", "template_xotfyik", contactData, "Q2f_Z-nFSmyEkxdT1");
     };
 
     const handleSubmit = (e) => {
