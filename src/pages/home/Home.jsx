@@ -1,13 +1,21 @@
 import "./Home.css";
 import Polaroid from "../../components/polaroid/Polaroid.jsx";
 import defaultImg from "../../assets/img-default.png";
+import StatusDisplay from "../../components/statusDisplay/StatusDisplay.jsx";
+import useCampingStatus from "../../hooks/useCampingStatus/useCampingStatus.js";
+
 
 function Home() {
+    const [campingStatus] = useCampingStatus();
+
     return (
         <div>
-
-            <div className="polaroid-wrapper"> {/* Wrapper voor centreren */}
-                <div className="container-polaroids"> {/* Container voor polaroids */}
+            <StatusDisplay
+                isFull={campingStatus.isFull}
+                availableUntil={campingStatus.availableUntil}
+            />
+            <div className="polaroid-wrapper">
+                <div className="container-polaroids">
                     <Polaroid image={defaultImg} title="Omgeving" alt="default img" link="/omgeving" />
                     <Polaroid image={defaultImg} title="Tarieven" alt="default img" link="/tarieven" />
                     <Polaroid image={defaultImg} title="Weerbericht" alt="default img" link="/weer" />

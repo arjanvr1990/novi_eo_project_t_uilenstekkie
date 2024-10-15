@@ -1,0 +1,45 @@
+.status-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.status-form h2 {
+    margin-bottom: 10px;
+}
+
+.status-form label {
+    display: flex;
+    align-items: center;
+}
+
+.status-form input[type="radio"] {
+    margin-right: 10px;
+}
+
+.status-form input[type="date"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.status-form button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.status-form button:hover {
+    background-color: #218838;
+}
