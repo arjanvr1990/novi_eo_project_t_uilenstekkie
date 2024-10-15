@@ -1,0 +1,20 @@
+.polaroid-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container-polaroids {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+
+.container-polaroids a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
