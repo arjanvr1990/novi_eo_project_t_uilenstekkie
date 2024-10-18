@@ -1,0 +1,11 @@
+{
+  "adult": 7.00,
+  "child": 3.00,
+  "smallTent": 2.50,
+  "largeTent": 5.00,
+  "caravan": 7.50,
+  "smallCamper": 5.00,
+  "largeCamper": 7.50,
+  "electricity": 3.50,
+  "car": 1.00
+}

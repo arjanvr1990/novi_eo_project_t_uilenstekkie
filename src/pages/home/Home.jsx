@@ -6,13 +6,14 @@ import useCampingStatus from "../../hooks/useCampingStatus/useCampingStatus.js";
 
 
 function Home() {
-    const [campingStatus] = useCampingStatus();
+    const [campingStatus, updateCampingStatus] = useCampingStatus();
 
     return (
         <div>
             <StatusDisplay
                 isFull={campingStatus.isFull}
                 availableUntil={campingStatus.availableUntil}
+                updateCampingStatus={updateCampingStatus}
             />
             <div className="polaroid-wrapper">
                 <div className="container-polaroids">

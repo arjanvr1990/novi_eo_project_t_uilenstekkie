@@ -1,14 +1,15 @@
+
 import "./PriceCalculator.css";
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useRandomRotation from "../../hooks/useRandomRotation/useRandomRotation.js";
 import useRandomFont from "../../hooks/useRandomFont/useRandomFont.js";
+import pricesData from "../../data/prices.json";
 
 function PriceCalculator() {
     const navigate = useNavigate();
     const rotation = useRandomRotation();
     const randomFont = useRandomFont();
-
 
     const [vehicle, setVehicle] = useState('');
     const [hasCar, setHasCar] = useState(false);
@@ -18,60 +19,49 @@ function PriceCalculator() {
     const [errorMessage, setErrorMessage] = useState('');
     const [totalPrice, setTotalPrice] = useState(0);
 
-    const prices = {
-        adult: 7.00,
-        child: 3.00,
-        smallTent: 2.50,
-        largeTent: 5.00,
-        caravan: 7.50,
-        smallCamper: 5.00,
-        largeCamper: 7.50,
-        electricity: 3.50,
-        car: 1.00,
-    };
 
+    const prices = pricesData;
 
     const calculatePrice = () => {
         let price = 0;
 
         switch (vehicle) {
             case 'Camper tot 5m':
-                price += prices.smallCamper;
+                price += prices.smallCamper || 0;
                 break;
             case 'Camper tot 6m':
-                price += prices.largeCamper;
+                price += prices.largeCamper || 0;
                 break;
             case 'Caravan tot 6m':
-                price += prices.caravan;
+                price += prices.caravan || 0;
                 break;
             case 'Tent Groot':
-                price += prices.largeTent;
+                price += prices.largeTent || 0;
                 break;
             case 'Tent Klein':
-                price += prices.smallTent;
+                price += prices.smallTent || 0;
                 break;
             default:
                 break;
         }
 
-        price += adults * prices.adult;
-        price += children * prices.child;
+        price += adults * (prices.adult || 0);
+        price += children * (prices.child || 0);
 
         if (electricity) {
-            price += prices.electricity;
+            price += prices.electricity || 0;
         }
 
         if (hasCar) {
-            price += prices.car;
+            price += prices.car || 0;
         }
 
         return price.toFixed(2);
     };
 
-
     useEffect(() => {
         setTotalPrice(calculatePrice());
-    }, [vehicle, hasCar, adults, children, electricity]);
+    }, [vehicle, hasCar, adults, children, electricity, prices]);
 
     const handleReserve = () => {
         if (!vehicle || adults < 1) {
@@ -176,5 +166,3 @@ function PriceCalculator() {
 }
 
 export default PriceCalculator;
-
-
