@@ -1,0 +1,92 @@
+.event-filter-wrapper {
+    width: 95%;
+    max-width: 1200px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.event-filter-wrapper input[type="text"],
+.event-filter-wrapper input[type="date"],
+.event-filter-wrapper select {
+    width: 100%;
+    height: 40px;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+}
+
+.event-filter-wrapper option {
+    color: black;
+    background-color: white;
+}
+
+.event-filter-wrapper input[type="checkbox"] {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.event-filter-wrapper label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.event-dates p {
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.event-filter {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.event-dates {
+    display: flex;
+}
+
+
+.genre-selecter {
+    margin-bottom: 20px;
+}
+
+.genre-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px;
+}
+
+.event-filter-wrapper h4 {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+
+@media (max-width: 768px) {
+    .event-filter-wrapper {
+        padding: 15px;
+    }
+
+    .event-filter-wrapper h1,
+    .event-filter-wrapper h4 {
+        font-size: 18px;
+    }
+
+    .event-filter-wrapper input[type="text"],
+    .event-filter-wrapper input[type="date"],
+    .event-filter-wrapper select {
+        width: 100%;
+    }
+}

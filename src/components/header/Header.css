@@ -3,7 +3,7 @@
     width: 100%;
     height: auto;
     display: flex;
-    margin-bottom: 100px;
+    margin-bottom: 200px;
     justify-content: center;
     align-items: center;
     overflow: visible;
@@ -56,8 +56,6 @@
 
 
 .logo img {
-    /*width: clamp(350px, 30vw, 600px);*/
-    /*height: auto;*/
     width: 100%;
     padding: 1vw;
 

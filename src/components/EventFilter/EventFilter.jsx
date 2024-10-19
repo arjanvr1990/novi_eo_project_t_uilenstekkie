@@ -1,4 +1,4 @@
-
+import "./EventFilter.css";
 import React from 'react';
 
 const EventFilter = ({
@@ -15,31 +15,51 @@ const EventFilter = ({
                          segments
                      }) => {
     return (
-        <div>
-            <h1>Evenementen Lijst</h1>
+        <div className="event-filter-wrapper">
+            <div className="event-filter">
             <input
                 type="text"
                 placeholder="Zoek op artiest naam"
                 value={searchTerm}
                 onChange={handleSearchChange}
             />
-            <br />
+
 
             <label>
-                Selecteer Segment:
                 <select value={selectedSegment} onChange={handleSegmentChange}>
-                    <option value="">Alle Segmenten</option>
+                    <option value="" >Alle Segmenten</option>
                     {segments.map((segment, index) => (
                         <option key={index} value={segment}>{segment}</option>
                     ))}
                 </select>
             </label>
-            <br />
+            </div>
+
+            <div className="event-dates">
+                <label>
+                    <input
+                        type="date"
+                        name="startDate"
+                        value={startDate}
+                        onChange={handleDateChange}
+                    />
+                </label>
+                <p>t/m</p>
+                <label>
+                    <input
+                        type="date"
+                        name="endDate"
+                        value={endDate}
+                        onChange={handleDateChange}
+                    />
+                </label>
+            </div>
 
             {selectedSegment && (
-                <div>
+                <div className="genre-selecter">
                     <h4>Genres voor {selectedSegment}:</h4>
-                    {uniqueGenres.map(genre => (
+                    <div className="genre-checkboxes">
+                        {uniqueGenres.map(genre => (
                         <label key={genre}>
                             <input
                                 type="checkbox"
@@ -50,28 +70,9 @@ const EventFilter = ({
                             {genre}
                         </label>
                     ))}
+                    </div>
                 </div>
             )}
-
-            <br />
-            <label>
-                Startdatum:
-                <input
-                    type="date"
-                    name="startDate"
-                    value={startDate}
-                    onChange={handleDateChange}
-                />
-            </label>
-            <label>
-                Einddatum:
-                <input
-                    type="date"
-                    name="endDate"
-                    value={endDate}
-                    onChange={handleDateChange}
-                />
-            </label>
         </div>
     );
 };

@@ -12,6 +12,7 @@ import Footer from "./components/footer/Footer.jsx";
 import Pictures from "./pages/pictures/Pictures.jsx";
 import Weather from "./pages/weather/Weather.jsx";
 import Admin from "./pages/admin/Admin.jsx";
+import EventOverview from "./pages/eventOverview/EventOverview.jsx";
 
 
 
@@ -28,7 +29,7 @@ function App() {
                 <Route path="/Reserveren" element={<Reservation />}/>
                 <Route path="/contact" element={<Contact />}/>
 
-                <Route path="/fotos" element={<Pictures/>}/>
+                <Route path="/events" element={<EventOverview/>}/>
                 <Route path="/weer" element={<Weather/>}/>
 
                 <Route path="/admin" element={<Admin/>}/>
