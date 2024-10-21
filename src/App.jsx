@@ -9,7 +9,6 @@ import Reservation from "./pages/reservations/Reservation.jsx";
 import Contact from "./pages/contact/Contact.jsx";
 import Header from "./components/header/Header.jsx";
 import Footer from "./components/footer/Footer.jsx";
-import Pictures from "./pages/pictures/Pictures.jsx";
 import Weather from "./pages/weather/Weather.jsx";
 import Admin from "./pages/admin/Admin.jsx";
 import EventOverview from "./pages/eventOverview/EventOverview.jsx";

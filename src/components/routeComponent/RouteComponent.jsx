@@ -7,12 +7,18 @@ const RouteComponent = ({ startCoordinates, endCoordinates, profile }) => {
     const { routeData, error, loading, getRoute } = useRoute(apiKey); // Gebruik de hook
     const [routeFetched, setRouteFetched] = useState(false); // State om bij te houden of de route al is opgehaald
 
+    // Definieer de standaard coördinaten
+    const defaultCoordinates = [4.960928364417612, 52.41067461917328]; // [longitude, latitude]
+
+    // Gebruik de standaard coördinaten als startCoordinates niet worden opgegeven
+    const startCoords = startCoordinates || defaultCoordinates;
+
     // Haal de route op bij het laden van de component
     useEffect(() => {
         const fetchRoute = async () => {
             if (!routeFetched) { // Controleer of de route nog niet is opgehaald
                 try {
-                    await getRoute(startCoordinates, endCoordinates, profile);
+                    await getRoute(startCoords, endCoordinates, profile);
                     setRouteFetched(true); // Zet de flag op true
                 } catch (err) {
                     console.error('Fout bij het ophalen van de route:', err);
@@ -21,10 +27,10 @@ const RouteComponent = ({ startCoordinates, endCoordinates, profile }) => {
         };
 
         fetchRoute();
-    }, [startCoordinates, endCoordinates, profile, getRoute, routeFetched]); // Voeg routeFetched toe aan de afhankelijkheden
+    }, [startCoords, endCoordinates, profile, getRoute, routeFetched]); // Voeg routeFetched toe aan de afhankelijkheden
 
     const handleNavigate = (provider) => {
-        const startLatLng = `${startCoordinates[1]},${startCoordinates[0]}`;
+        const startLatLng = `${startCoords[1]},${startCoords[0]}`; // Gebruik startCoords
         const endLatLng = `${endCoordinates[1]},${endCoordinates[0]}`;
 
         if (provider === 'google') {
