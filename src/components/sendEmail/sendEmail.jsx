@@ -2,7 +2,11 @@ import emailjs from "emailjs-com";
 
 
 const sendEmail = (reservationData) => {
-    emailjs.send("service_28tjxuw", "template_65l432s", reservationData, "Q2f_Z-nFSmyEkxdT1")
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const userID = import.meta.env.VITE_EMAILJS_USER_ID;
+
+    emailjs.send(serviceID, templateID, reservationData, userID)
         .then((response) => {
             console.log("E-mail verzonden!", response.status, response.text);
         })

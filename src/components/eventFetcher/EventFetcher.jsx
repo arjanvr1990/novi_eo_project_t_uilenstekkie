@@ -4,7 +4,7 @@ import EventFilter from "../../components/EventFilter/EventFilter.jsx";
 import EventList from "../../components/EventList/EventList.jsx";
 
 const EventFetcher = () => {
-    const API_KEY = 'cuTAQnexXF5rUqC6hLkbLWDXcy0HZYGS';
+    const API_KEY = import.meta.env.VITE_EVENT_FETCHER_API_KEY;
     const { events, loading, error, segments } = useFetchEvents(API_KEY);
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedSegment, setSelectedSegment] = useState('');
