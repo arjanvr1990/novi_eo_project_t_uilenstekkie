@@ -6,12 +6,13 @@ import activities from "../../data/activities.json";
 import {Link} from 'react-router-dom';
 
 
+
 function Surroundings() {
 
 
     return (
         <div>
-
+            {/*<ActivitiesDisplay/>*/}
 
             <div className="polaroid-wrapper">
                 <div className="container-polaroids">

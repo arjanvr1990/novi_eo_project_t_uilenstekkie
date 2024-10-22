@@ -12,6 +12,7 @@ import Footer from "./components/footer/Footer.jsx";
 import Weather from "./pages/weather/Weather.jsx";
 import Admin from "./pages/admin/Admin.jsx";
 import EventOverview from "./pages/eventOverview/EventOverview.jsx";
+import ActivitiesPage from "./pages/activitiesPage/ActivitiesPage.jsx";
 
 
 
@@ -23,7 +24,10 @@ function App() {
             <Header />
             <Routes>
                 <Route path="/" element={<Home />}/>
+
                 <Route path="/omgeving" element={<Surroundings />}/>
+                <Route path="/activities/:id" element={<ActivitiesPage />} />
+
                 <Route path="/tarieven" element={<Prices />}/>
                 <Route path="/Reserveren" element={<Reservation />}/>
                 <Route path="/contact" element={<Contact />}/>

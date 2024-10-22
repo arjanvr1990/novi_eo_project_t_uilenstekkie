@@ -11,9 +11,10 @@ const RouteInfo = ({ routeData, onNavigate }) => {
 
     return (
         <div>
-            <h3>Route Gegevens:</h3>
-            <p><strong>Afstand:</strong> {formatDistance(routeData.routes[0].summary.distance)}</p>
-            <p><strong>Duur:</strong> {formatDuration(routeData.routes[0].summary.duration)}</p>
+            <h3>Fietsroute Gegevens:</h3>
+            <p>Afstand: {formatDistance(routeData.routes[0].summary.distance)}</p>
+            <p>Duur: {formatDuration(routeData.routes[0].summary.duration)}</p>
+
 
             {/* Navigatie knoppen */}
             <button onClick={() => onNavigate('google')}>Navigeren met Google Maps</button>
@@ -23,3 +24,4 @@ const RouteInfo = ({ routeData, onNavigate }) => {
 };
 
 export default RouteInfo;
+
