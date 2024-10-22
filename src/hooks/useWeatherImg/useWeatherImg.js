@@ -7,7 +7,7 @@ import snowImg from "../../assets/wheater-api-images/snow.png";
 import sunnyImg from "../../assets/wheater-api-images/sunny.png";
 import thunderImg from "../../assets/wheater-api-images/thunder.png";
 
-// Object om weercondities te koppelen aan afbeeldingen
+
 const weatherImages = {
     Clouds: cloudyImg,
     Fog: foggyImg,
@@ -29,9 +29,9 @@ const useWeatherImg = () => {
         const getWeather = async () => {
             try {
                 const data = await useFetchWeatherData(latitude, longitude);
-                const description = data.weather[0].main; // Haal de hoofdweercategorie op
-                const imageUrl = weatherImages[description] || sunnyImg; // Gebruik een fallback
-                setWeatherImage(imageUrl); // Stel de afbeelding in
+                const description = data.weather[0].main;
+                const imageUrl = weatherImages[description] || sunnyImg;
+                setWeatherImage(imageUrl);
             } catch (err) {
                 setError(err.message);
             } finally {
