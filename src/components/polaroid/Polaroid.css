@@ -24,9 +24,9 @@
     display: block;
 }
 
-.polaroid-title {
+.polaroid-title,
+.polaroid-quote {
     text-align: center;
-    font-family: 'Arial', sans-serif;
     margin-top: 10px;
     color: #333;
 }

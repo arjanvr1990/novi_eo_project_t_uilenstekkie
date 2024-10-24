@@ -1,134 +1,178 @@
-// WeatherAdvisory.jsx
-import React from 'react';
-
-const WeatherAdvisory = ({ windSpeed, uvIndex, precipitationType, temperature, weatherCondition }) => {
-    const getWeatherAdvisory = () => {
-        let advisories = []; // Gebruik een array om adviezen op te slaan
-
-        // Advisies op basis van windsnelheid
-        if (windSpeed <= 5) {
-            advisories.push("Zachtjes aan, de lucht is niet de enige die waait. Zorg ervoor dat je tent niet gaat dansen!");
-        } else if (windSpeed > 5 && windSpeed <= 10) {
-            advisories.push("Zet je haringen goed vast! Het lijkt wel een winderige dansparty hier!");
-        } else if (windSpeed > 10) {
-            advisories.push("Als de wind harder blaast dan je buurman met zijn grasmaaier, zorg dan dat je tent niet wegvliegt!");
-        }
-
-        // Advisies op basis van weersomstandigheden
-        const cloudyConditions = ['Clouds', 'Scattered Clouds', 'Overcast', 'Broken Clouds'];
-
-        if (!cloudyConditions.includes(weatherCondition)) {
-            // Als de zon schijnt, geef adviezen op basis van UV-index
-            if (uvIndex < 3) {
-                advisories.push("Het is een mooie dag om buiten te zijn, maar vergeet je zonnebrand niet!");
-            } else if (uvIndex >= 3 && uvIndex <= 7) {
-                advisories.push("Smeer je goed in, of je wordt een lopende tomaat!");
-            } else {
-                advisories.push("Als je geen zonnebrand gebruikt, kan je binnenkort de hoofdrol spelen in 'Zonverbranding: De Film'.");
-            }
-        }
-
-        // Advisies op basis van neerslag
-        if (precipitationType === 'light') {
-            advisories.push("Een paar druppels? Tijd voor een dans in de regen! Zorg voor je rubberlaarzen!");
-        } else if (precipitationType === 'heavy') {
-            advisories.push("Als je plannen hebt om naar buiten te gaan, misschien een extra paar sokken in je tas stoppen. En een opblaasboot?");
-        } else if (precipitationType === 'thunderstorm') {
-            advisories.push("Wees voorzichtig, het lijkt erop dat de hemel een feestje heeft met bliksem en donder! Blijf binnen!");
-        }
-
-        // Advisies op basis van temperatuur
-        if (temperature < 15) {
-            advisories.push("Neem je warme sokken mee, of je krijgt gegarandeerd koude voeten – en dat is niet de manier om je tent in te gaan!");
-        } else if (temperature > 30) {
-            advisories.push("Zorg ervoor dat je genoeg drinkt, anders kun je als een druif in de zon opwarmen!");
-        } else {
-            advisories.push("Perfecte kampeertemperatuur! Geniet van de buitenlucht zonder dat je als een ijsblokje of een stoombad eindigt.");
-        }
-
-        return advisories; // Retourneert de array van adviezen
-    };
-
-    const advisoryMessages = getWeatherAdvisory();
-
-    return (
-        <div className="weather-advisory">
-            {advisoryMessages.map((advisory, index) => (
-                <div key={index}>{advisory}</div> // Render elke advies als een aparte afbeelding
-            ))}
-        </div>
-    );
-};
-
-export default WeatherAdvisory;
-
-
-
-// // WeatherAdvisory.jsx
-// import React from 'react';
-// import windyImage from '../../assets/advisories/windy.png'; // Voorbeeld afbeelding voor wind
-// import uvLowImage from '../../assets/advisories/uv_low.png'; // Afbeelding voor laag UV
-// import uvMediumImage from '../../assets/advisories/uv_medium.png'; // Afbeelding voor gemiddeld UV
-// import uvHighImage from '../../assets/advisories/uv_high.png'; // Afbeelding voor hoog UV
-// import rainLightImage from '../../assets/advisories/rain_light.png'; // Afbeelding voor lichte regen
-// import rainHeavyImage from '../../assets/advisories/rain_heavy.png'; // Afbeelding voor zware regen
-// import thunderstormImage from '../../assets/advisories/thunderstorm.png'; // Afbeelding voor onweersbuien
-// import coldWeatherImage from '../../assets/advisories/cold_weather.png'; // Afbeelding voor koud weer
-// import hotWeatherImage from '../../assets/advisories/hot_weather.png'; // Afbeelding voor heet weer
-// import perfectWeatherImage from '../../assets/advisories/perfect_weather.png'; // Afbeelding voor perfecte temperatuur
+// import "./weatherAdvisor.css";
+// import React from "react";
+// import windspeed5 from "../../assets/weather-cartoons/windspeed-les-than-5.jpeg";
+// import windSpeed5Till10 from "../../assets/weather-cartoons/windspeed5Till10.jpg";
+// import windSpeed10 from "../../assets/weather-cartoons/windspeed10.jpg";
+// import uvIndex3 from "../../assets/weather-cartoons/uvIndex3.jpg";
+// import uvIndex8 from "../../assets/weather-cartoons/uvIndex8.jpg";
+// import rainLight from "../../assets/weather-cartoons/lightRain.jpg";
+// import rainModerate from "../../assets/weather-cartoons/moderateRain.jpg";
+// import rainHeavy from "../../assets/weather-cartoons/heavyRain.jpg";
+// import tunderStorm from "../../assets/weather-cartoons/thunderstorm.jpg";
+// import tempLessThan15 from "../../assets/weather-cartoons/tempLessThan15.jpg";
+// import temp25plus from "../../assets/weather-cartoons/temp25plus.jpg";
 //
-// const WeatherAdvisory = ({ windSpeed, uvIndex, precipitationType, temperature }) => {
-//     const getWeatherAdvisory = () => {
-//         let advisories = []; // Gebruik een array om adviezen op te slaan
 //
-//         // Advisies op basis van windsnelheid
+// const WeatherAdvisor = ({ windSpeed, uvIndex, precipitationType, temperature, weatherCondition }) => {
+//     const getWeatherAdvisor = () => {
+//         let advisory = {
+//             message: "",
+//             image: null
+//         };
+//
+//
 //         if (windSpeed <= 5) {
-//             advisories.push(<img src={windyImage} alt="Zachtjes aan, de lucht is niet de enige die waait. Zorg ervoor dat je tent niet gaat dansen!" />);
+//             advisory.message = "Zachtjes aan, de lucht is niet de enige die waait. Zorg ervoor dat je tent niet gaat dansen!";
+//             advisory.image = windspeed5;
 //         } else if (windSpeed > 5 && windSpeed <= 10) {
-//             advisories.push(<img src={windyImage} alt="Zet je haringen goed vast! Het lijkt wel een winderige dansparty hier!" />);
+//             advisory.message = "Zet je haringen goed vast! Het lijkt wel een winderige dansparty hier!";
+//             advisory.image = windSpeed5Till10;
 //         } else if (windSpeed > 10) {
-//             advisories.push(<img src={windyImage} alt="Als de wind harder blaast dan je buurman met zijn grasmaaier, zorg dan dat je tent niet wegvliegt!" />);
+//             advisory.message = "Als de wind harder blaast dan je buurman met zijn grasmaaier, zorg dan dat je tent niet wegvliegt!";
+//             advisory.image = windSpeed10;
 //         }
 //
-//         // Advisies op basis van UV-index
-//         if (uvIndex < 3) {
-//             advisories.push(<img src={uvLowImage} alt="Het is een mooie dag om buiten te zijn, maar vergeet je zonnebrand niet!" />);
-//         } else if (uvIndex >= 3 && uvIndex <= 7) {
-//             advisories.push(<img src={uvMediumImage} alt="Smeer je goed in, of je wordt een lopende tomaat!" />);
-//         } else {
-//             advisories.push(<img src={uvHighImage} alt="Als je geen zonnebrand gebruikt, kan je binnenkort de hoofdrol spelen in 'Zonverbranding: De Film'." />);
+//
+//         const cloudyConditions = ["Clouds", "Scattered Clouds", "Overcast", "Broken Clouds"];
+//
+//         if (!cloudyConditions.includes(weatherCondition)) {
+//
+//             if (uvIndex >= 8) {
+//                 advisory.message = "Smeer je goed in, of je wordt een lopende tomaat!";
+//                 advisory.image = uvIndex8;
+//             } else if (uvIndex >= 3) {
+//                 advisory.message = "Smeer je goed in, voor een gezond kleurtje";
+//                 advisory.image = uvIndex3;
+//             }
 //         }
 //
 //         // Advisies op basis van neerslag
-//         if (precipitationType === 'light') {
-//             advisories.push(<img src={rainLightImage} alt="Een paar druppels? Tijd voor een dans in de regen! Zorg voor je rubberlaarzen!" />);
-//         } else if (precipitationType === 'heavy') {
-//             advisories.push(<img src={rainHeavyImage} alt="Als je plannen hebt om naar buiten te gaan, misschien een extra paar sokken in je tas stoppen. En een opblaasboot?" />);
-//         } else if (precipitationType === 'thunderstorm') {
-//             advisories.push(<img src={thunderstormImage} alt="Wees voorzichtig, het lijkt erop dat de hemel een feestje heeft met bliksem en donder! Blijf binnen!" />);
+//         if (precipitationType === "light") {
+//             advisory.message = "Een paar druppels? Tijd voor een dans in de regen! Zorg voor je rubberlaarzen!";
+//             advisory.image = rainLight;
+//         } else if (precipitationType === "moderate") {
+//             advisory.message = "Een goede gelegenheid om je regenjas aan te trekken!";
+//             advisory.image = rainModerate;
+//         } else if (precipitationType === "heavy") {
+//             advisory.message = "Zorg voor een opblaasboot! Het lijkt erop dat het gaat gieten.";
+//             advisory.image = rainHeavy;
+//         } else if (precipitationType === "thunderstorm") {
+//             advisory.message = "Wees voorzichtig, het lijkt erop dat de hemel een feestje heeft met bliksem en donder! Blijf binnen!";
+//             advisory.image = tunderStorm;
 //         }
 //
-//         // Advisies op basis van temperatuur
+//
 //         if (temperature < 15) {
-//             advisories.push(<img src={coldWeatherImage} alt="Neem je warme sokken mee, of je krijgt gegarandeerd koude voeten – en dat is niet de manier om je tent in te gaan!" />);
+//             advisory.message = "Neem je warme sokken mee, of je krijgt gegarandeerd koude voeten – en dat is niet de manier om je tent in te gaan!";
+//             advisory.image = tempLessThan15;
 //         } else if (temperature > 30) {
-//             advisories.push(<img src={hotWeatherImage} alt="Zorg ervoor dat je genoeg drinkt, anders kun je als een druif in de zon opwarmen!" />);
-//         } else {
-//             advisories.push(<img src={perfectWeatherImage} alt="Perfecte kampeertemperatuur! Geniet van de buitenlucht zonder dat je als een ijsblokje of een stoombad eindigt." />);
+//             advisory.message = "Zorg ervoor dat je genoeg drinkt, anders kun je als een druif in de zon opwarmen!";
+//             advisory.image = temp25plus;
 //         }
 //
-//         return advisories; // Retourneert de array van adviezen
+//         return advisory;
 //     };
 //
-//     const advisoryMessages = getWeatherAdvisory();
+//     const advisory = getWeatherAdvisor();
 //
 //     return (
 //         <div className="weather-advisory">
-//             {advisoryMessages.map((advisory, index) => (
-//                 <div key={index}>{advisory}</div> // Render elke advies als een aparte afbeelding
-//             ))}
+//             {advisory.message && (
+//                 <div>{advisory.image && <img src={advisory.image} alt={advisory.message} />}
+//                     <p>{advisory.message}</p>
+//
+//                 </div>
+//             )}
 //         </div>
 //     );
 // };
 //
-// export default WeatherAdvisory;
+// export default WeatherAdvisor;
+
+import React from "react";
+import Polaroid from "../polaroid/Polaroid"; // Zorg ervoor dat je het juiste pad gebruikt
+import windspeed5 from "../../assets/weather-cartoons/windspeed-les-than-5.jpeg";
+import windSpeed5Till10 from "../../assets/weather-cartoons/windspeed5Till10.jpg";
+import windSpeed10 from "../../assets/weather-cartoons/windspeed10.jpg";
+import uvIndex3 from "../../assets/weather-cartoons/uvIndex3.jpg";
+import uvIndex8 from "../../assets/weather-cartoons/uvIndex8.jpg";
+import rainLight from "../../assets/weather-cartoons/lightRain.jpg";
+import rainModerate from "../../assets/weather-cartoons/moderateRain.jpg";
+import rainHeavy from "../../assets/weather-cartoons/heavyRain.jpg";
+import thunderStorm from "../../assets/weather-cartoons/thunderstorm.jpg";
+import tempLessThan15 from "../../assets/weather-cartoons/tempLessThan15.jpg";
+import temp25plus from "../../assets/weather-cartoons/temp25plus.jpg";
+
+const WeatherAdvisor = ({ windSpeed, uvIndex, precipitationType, temperature, weatherCondition }) => {
+    const getWeatherAdvisor = () => {
+        let advisory = {
+            message: "",
+            image: null
+        };
+
+        if (windSpeed <= 5) {
+            advisory.message = "Zachtjes aan, de lucht is niet de enige die waait. Zorg ervoor dat je tent niet gaat dansen!";
+            advisory.image = windspeed5;
+        } else if (windSpeed > 5 && windSpeed <= 10) {
+            advisory.message = "Zet je haringen goed vast! Het lijkt wel een winderige dansparty hier!";
+            advisory.image = windSpeed5Till10;
+        } else if (windSpeed > 10) {
+            advisory.message = "Als de wind harder blaast dan je buurman met zijn grasmaaier, zorg dan dat je tent niet wegvliegt!";
+            advisory.image = windSpeed10;
+        }
+
+        const cloudyConditions = ["Clouds", "Scattered Clouds", "Overcast", "Broken Clouds"];
+
+        if (!cloudyConditions.includes(weatherCondition)) {
+            if (uvIndex >= 8) {
+                advisory.message = "Smeer je goed in, of je wordt een lopende tomaat!";
+                advisory.image = uvIndex8;
+            } else if (uvIndex >= 3) {
+                advisory.message = "Smeer je goed in, voor een gezond kleurtje";
+                advisory.image = uvIndex3;
+            }
+        }
+
+        // Advisies op basis van neerslag
+        if (precipitationType === "light") {
+            advisory.message = "Een paar druppels? Tijd voor een dans in de regen! Zorg voor je rubberlaarzen!";
+            advisory.image = rainLight;
+        } else if (precipitationType === "moderate") {
+            advisory.message = "Een goede gelegenheid om je regenjas aan te trekken!";
+            advisory.image = rainModerate;
+        } else if (precipitationType === "heavy") {
+            advisory.message = "Zorg voor een opblaasboot! Het lijkt erop dat het gaat gieten.";
+            advisory.image = rainHeavy;
+        } else if (precipitationType === "thunderstorm") {
+            advisory.message = "Wees voorzichtig, het lijkt erop dat de hemel een feestje heeft met bliksem en donder! Blijf binnen!";
+            advisory.image = thunderStorm;
+        }
+
+        if (temperature < 15) {
+            advisory.message = "Neem je warme sokken mee, of je krijgt gegarandeerd koude voeten – en dat is niet de manier om je tent in te gaan!";
+            advisory.image = tempLessThan15;
+        } else if (temperature > 30) {
+            advisory.message = "Zorg ervoor dat je genoeg drinkt, anders kun je als een druif in de zon opwarmen!";
+            advisory.image = temp25plus;
+        }
+
+        return advisory;
+    };
+
+    const advisory = getWeatherAdvisor();
+
+    return (
+        <div className="weather-advisory">
+            {advisory.message && (
+                <Polaroid
+                    image={advisory.image}
+                    alt={advisory.message}
+                    link="/weer"
+                    quote={advisory.message}
+                />
+            )}
+        </div>
+    );
+};
+
+export default WeatherAdvisor;
