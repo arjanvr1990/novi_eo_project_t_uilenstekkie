@@ -1,10 +1,13 @@
-// WeatherOverview.jsx
-import React, { useEffect, useState } from 'react';
+import "./WeatherOverview.css";
+import React, { useEffect, useState } from "react";
 import useFetchWeatherData from '../../hooks/useFetchWeatherData/useFetchWeatherData';
-import WeatherAdvisor from "../../components/weatherAdvisor/WeatherAdvisor.jsx"
+import WeatherCurrent from "../../components/weatherCurrent/WeatherCurrent.jsx"
+import WeatherForecast from "../../components/weatherForecast/WeatherForcast.jsx";
+import WeatherAdvisor from "../weatherAdvisor/WeatherAdvisor.jsx";
 
 const WeatherOverview = () => {
     const [weatherData, setWeatherData] = useState(null);
+    const [forecastData, setForecastData] = useState(null);
     const [error, setError] = useState(null);
 
     const latitude = 52.3702;  // Amsterdam
@@ -14,7 +17,8 @@ const WeatherOverview = () => {
         const getWeather = async () => {
             try {
                 const data = await useFetchWeatherData(latitude, longitude);
-                setWeatherData(data);
+                setWeatherData(data.current);
+                setForecastData(data.daily);
             } catch (err) {
                 setError(err.message);
             }
@@ -23,37 +27,38 @@ const WeatherOverview = () => {
         getWeather();
     }, [latitude, longitude]);
 
+
     if (error) {
-        return <div>{error}</div>;
+        return <div>Error: {error}</div>;
     }
 
-    if (!weatherData) {
+
+    if (!weatherData || !forecastData) {
         return <div>Loading...</div>;
     }
 
-    const currentTemp = weatherData.main.temp;
-    const weatherCondition = weatherData.weather[0].description;
-    const windSpeed = weatherData.wind.speed;
-    const humidity = weatherData.main.humidity;
-    const uvIndex = weatherData.current?.uvi || 0; // Veilige toegang tot uvi
-    const precipitationType = weatherData.weather[0].main === 'Rain' ? 'heavy' : 'light'; // Eenvoudige voorbeeldwaarde
+
+    const currentTemp = weatherData.temp;
+    const feelsLikeTemp = weatherData.feels_like;
+    const weatherCondition = weatherData.weather?.[0]?.description || "Geen beschrijving";
+    const windSpeed = weatherData.wind?.speed || 0;
+    const uvIndex = weatherData.uvi || 0;
+    const precipitationType = weatherData.weather?.[0]?.main === "Rain" ? "heavy" : "light";
 
     return (
         <div>
-            <h2>Weeroverzicht</h2>
-            <p>Temperatuur: {currentTemp} °C</p>
-            <p>Weerconditie: {weatherCondition}</p>
-            <p>Luchtvochtigheid: {humidity}%</p>
-            <p>Windsnelheid: {windSpeed} m/s</p>
             <WeatherAdvisor
                 windSpeed={windSpeed}
                 uvIndex={uvIndex}
                 precipitationType={precipitationType}
                 temperature={currentTemp}
             />
-            {/* Andere weerinformatie kan hier worden toegevoegd */}
+
+            <WeatherCurrent weatherData={weatherData} />
+            <WeatherForecast forecastData={forecastData} />
         </div>
     );
 };
 
 export default WeatherOverview;
+
