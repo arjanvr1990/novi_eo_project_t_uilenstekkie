@@ -16,12 +16,30 @@ const WeatherCurrent = ({ weatherData }) => {
     return (
         <div className="weather-current">
             <h2>Huidig Weer</h2>
-            <img src={weatherIcon} alt={weatherDescription} />
-            <p>Temperatuur: {temp.toFixed(1)} °C</p>
-            <p>Gevoelsmatige temperatuur: {feels_like.toFixed(1)} °C</p>
-            <p>Luchtvochtigheid: {humidity}%</p>
-            <p>Weerconditie: {weatherDescription}</p>
-            <p>Windsnelheid: {wind?.speed.toFixed(1)} m/s</p>
+
+            <div className="weather-temp-icon">
+                <h3 className="temperture">{temp.toFixed(1)}°</h3>
+                <img src={weatherIcon} alt={weatherDescription} />
+            </div>
+
+                <p className="temperture-note">*Gevoelsmatige temperatuur: {feels_like.toFixed(1)} °C</p>
+
+            <div className="weather-details">
+                <div >
+                    <h3>{humidity}%</h3>
+                    <p>Luchtvochtigheid</p>
+                </div>
+                {/*<div>*/}
+                {/*    <p>Weerconditie:</p>*/}
+                {/*    <h3>{weatherDescription}</h3>*/}
+                {/*</div>*/}
+                <div>
+                    <h3>{wind?.speed.toFixed(1)} m/s</h3>
+                    <p>Windsnelheid</p>
+                </div>
+
+
+            </div>
         </div>
     );
 };

@@ -1,0 +1,18 @@
+.weather-advisory {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+.polaroid:hover {
+    transform: scale(1.05);
+}
+
+.polaroid img {
+    width: 100%;
+    height: auto;
+}

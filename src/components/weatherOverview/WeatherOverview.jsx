@@ -1,9 +1,9 @@
 import "./WeatherOverview.css";
 import React, { useEffect, useState } from "react";
 import useFetchWeatherData from '../../hooks/useFetchWeatherData/useFetchWeatherData';
-import WeatherCurrent from "../../components/weatherCurrent/WeatherCurrent.jsx"
+import WeatherCurrent from "../../components/weatherCurrent/WeatherCurrent.jsx";
 import WeatherForecast from "../../components/weatherForecast/WeatherForcast.jsx";
-import WeatherAdvisor from "../weatherAdvisor/WeatherAdvisor.jsx";
+import WeatherAdvisory from "../weatherAdvisor/WeatherAdvisory.jsx";
 
 const WeatherOverview = () => {
     const [weatherData, setWeatherData] = useState(null);
@@ -27,38 +27,42 @@ const WeatherOverview = () => {
         getWeather();
     }, [latitude, longitude]);
 
-
     if (error) {
         return <div>Error: {error}</div>;
     }
 
-
     if (!weatherData || !forecastData) {
         return <div>Loading...</div>;
     }
-
 
     const currentTemp = weatherData.temp;
     const feelsLikeTemp = weatherData.feels_like;
     const weatherCondition = weatherData.weather?.[0]?.description || "Geen beschrijving";
     const windSpeed = weatherData.wind?.speed || 0;
     const uvIndex = weatherData.uvi || 0;
-    const precipitationType = weatherData.weather?.[0]?.main === "Rain" ? "heavy" : "light";
+
+
+    let precipitationType = "none";
+    if (weatherData.rain) {
+        precipitationType = "light";
+    }
 
     return (
         <div>
-            <WeatherAdvisor
+            <WeatherCurrent weatherData={weatherData} />
+
+            <WeatherAdvisory
                 windSpeed={windSpeed}
                 uvIndex={uvIndex}
                 precipitationType={precipitationType}
                 temperature={currentTemp}
+                weatherCondition={weatherCondition}
             />
 
-            <WeatherCurrent weatherData={weatherData} />
+
             <WeatherForecast forecastData={forecastData} />
         </div>
     );
 };
 
 export default WeatherOverview;
-

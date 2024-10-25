@@ -29,8 +29,8 @@ const useWeatherImg = () => {
         const getWeather = async () => {
             try {
                 const data = await useFetchWeatherData(latitude, longitude);
-                const description = data.weather[0].main;
-                const imageUrl = weatherImages[description] || sunnyImg;
+                const description = data.current.weather[0].main; // Toegang tot de weersconditie
+                const imageUrl = weatherImages[description] || sunnyImg; // Fallback naar sunnyImg
                 setWeatherImage(imageUrl);
             } catch (err) {
                 setError(err.message);

@@ -14,7 +14,7 @@ function Polaroid({ image, title, alt, link, date, name, quote }) {
             <div
                 className="polaroid-container"
                 style={{
-                    transform: rotation,
+                    transform: `rotate(${rotation}deg)`,
                     transition: "transform 0.3s ease",
                     fontFamily: randomFont
                 }}

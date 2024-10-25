@@ -15,11 +15,10 @@
 
 .forecast-display {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-grow: 1;
     overflow: hidden;
-    white-space: nowrap;
 }
 
 .forecast-item {
@@ -29,8 +28,8 @@
     border-radius: 5px;
     background-color: #fff;
     transition: transform 0.2s;
-    flex: 0 0 auto;
-    width: calc(100% / 5 - 10px);
+    flex: 1 0 calc(20% - 10px);
+    box-sizing: border-box;
 }
 
 .forecast-date {
@@ -64,3 +63,21 @@
     margin: 5px 0;
 }
 
+
+@media (max-width: 1024px) {
+    .forecast-item {
+        flex: 1 0 calc(33.33% - 10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .forecast-item {
+        flex: 1 0 calc(50% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .forecast-item {
+        flex: 1 0 calc(100% - 10px);
+    }
+}

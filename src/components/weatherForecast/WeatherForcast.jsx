@@ -1,15 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import './WeatherForecast.css';
 
 const WeatherForecast = ({ forecastData }) => {
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [itemsToShow, setItemsToShow] = useState(5);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 480) {
+                setItemsToShow(1);
+            } else if (window.innerWidth < 768) {
+                setItemsToShow(2);
+            } else if (window.innerWidth < 1024) {
+                setItemsToShow(3);
+            } else {
+                setItemsToShow(5);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        handleResize();
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+
     if (!forecastData || !forecastData.list) {
         return <div>Loading...</div>;
     }
 
     const forecasts = forecastData.list;
-
-    const itemsToShow = 5;
-    const [currentIndex, setCurrentIndex] = useState(0);
 
     const handleNext = () => {
         setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, forecasts.length - itemsToShow));
@@ -35,7 +59,7 @@ const WeatherForecast = ({ forecastData }) => {
                                 })}
                             </p>
                             <img
-                                src={`http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`}
+                                src={`https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`}
                                 alt={forecast.weather[0].description}
                                 className="forecast-icon"
                             />
@@ -48,6 +72,26 @@ const WeatherForecast = ({ forecastData }) => {
             </div>
         </div>
     );
+};
+
+
+WeatherForecast.propTypes = {
+    forecastData: PropTypes.shape({
+        list: PropTypes.arrayOf(
+            PropTypes.shape({
+                dt: PropTypes.number.isRequired,
+                main: PropTypes.shape({
+                    temp: PropTypes.number.isRequired,
+                }).isRequired,
+                weather: PropTypes.arrayOf(
+                    PropTypes.shape({
+                        icon: PropTypes.string.isRequired,
+                        description: PropTypes.string.isRequired,
+                    })
+                ).isRequired,
+            })
+        ).isRequired,
+    }).isRequired,
 };
 
 export default WeatherForecast;
