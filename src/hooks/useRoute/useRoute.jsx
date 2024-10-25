@@ -1,6 +1,5 @@
-
-import { useState } from 'react';
-import axios from 'axios';
+import { useState } from "react";
+import axios from "axios";
 
 const useRoute = (apiKey) => {
     const [routeData, setRouteData] = useState(null);
@@ -16,13 +15,13 @@ const useRoute = (apiKey) => {
                 coordinates: [startCoordinates, endCoordinates],
             }, {
                 headers: {
-                    'Authorization': apiKey,
-                    'Content-Type': 'application/json'
+                    "Authorization": apiKey,
+                    "Content-Type": 'application/json'
                 }
             });
             setRouteData(response.data);
         } catch (err) {
-            setError(err.response ? err.response.data.error : 'Er is een fout opgetreden.');
+            setError(err.response ? err.response.data.error : "Er is een fout opgetreden.");
             setRouteData(null);
         } finally {
             setLoading(false);

@@ -1,4 +1,3 @@
-// src/components/routeComponent/RouteComponent.jsx
 import React, { useEffect, useState } from 'react';
 import useRoute from '../../hooks/useRoute/useRoute.jsx';
 import RouteInfo from "../../components/routeInfo/RouteInfo.jsx";

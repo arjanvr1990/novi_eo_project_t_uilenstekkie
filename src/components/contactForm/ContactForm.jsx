@@ -45,7 +45,6 @@ function ContactForm() {
 
         sendEmail(contactData)
             .then(() => {
-                // Reset form fields
                 firstName.setValue("");
                 middleName.setValue("");
                 lastName.setValue("");
@@ -69,7 +68,7 @@ function ContactForm() {
             <h2>Contactformulier</h2>
             <form className="contact-form" onSubmit={handleSubmit}>
                 {errorMessage && <p className="error-message">{errorMessage}</p>}
-                {successMessage && <p className="success-message">{successMessage}</p>}
+                {successMessage && <p className="succes-message">{successMessage}</p>}
                 <div className="contact-form-input-container">
                     {firstName.inputField}
                     {middleName.inputField}

@@ -13,6 +13,7 @@ import Weather from "./pages/weather/Weather.jsx";
 import Admin from "./pages/admin/Admin.jsx";
 import EventOverview from "./pages/eventOverview/EventOverview.jsx";
 import ActivitiesPage from "./pages/activitiesPage/ActivitiesPage.jsx";
+import LogIn from "./pages/logIn/LogIn.jsx";
 
 
 
@@ -36,6 +37,7 @@ function App() {
                 <Route path="/weer" element={<Weather/>}/>
 
                 <Route path="/admin" element={<Admin/>}/>
+                <Route path="/login" element={<LogIn/>}/>
             </Routes>
             <Footer />
             </div>

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import './WeatherForecast.css';
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import "./WeatherForecast.css";
 
 const WeatherForecast = ({ forecastData }) => {
 
@@ -20,11 +20,11 @@ const WeatherForecast = ({ forecastData }) => {
             }
         };
 
-        window.addEventListener('resize', handleResize);
+        window.addEventListener("resize", handleResize);
         handleResize();
 
         return () => {
-            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('' + "resize", handleResize);
         };
     }, []);
 
@@ -53,9 +53,9 @@ const WeatherForecast = ({ forecastData }) => {
                         <div key={index} className="forecast-item">
                             <p className="forecast-date">
                                 {new Date(forecast.dt * 1000).toLocaleString('nl-NL', {
-                                    weekday: 'short',
-                                    hour: '2-digit',
-                                    minute: '2-digit',
+                                    weekday: "short",
+                                    hour: "2-digit",
+                                    minute: "2-digit",
                                 })}
                             </p>
                             <img

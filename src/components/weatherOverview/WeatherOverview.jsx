@@ -1,6 +1,6 @@
 import "./WeatherOverview.css";
 import React, { useEffect, useState } from "react";
-import useFetchWeatherData from '../../hooks/useFetchWeatherData/useFetchWeatherData';
+import useFetchWeatherData from "../../hooks/useFetchWeatherData/useFetchWeatherData";
 import WeatherCurrent from "../../components/weatherCurrent/WeatherCurrent.jsx";
 import WeatherForecast from "../../components/weatherForecast/WeatherForcast.jsx";
 import WeatherAdvisory from "../weatherAdvisor/WeatherAdvisory.jsx";

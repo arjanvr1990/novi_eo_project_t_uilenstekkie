@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './StatusForm.css'; // Import de CSS
+import "./StatusForm.css";
 
 function StatusForm({ onSubmit }) {
     const [isFull, setIsFull] = useState(false);

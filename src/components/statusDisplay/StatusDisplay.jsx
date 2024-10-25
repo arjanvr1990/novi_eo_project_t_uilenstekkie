@@ -12,7 +12,7 @@ function StatusDisplay({ isFull, availableUntil, updateCampingStatus }) {
 
 
     const formatDate = (dateString) => {
-        const options = { day: '2-digit', month: 'long', year: 'numeric' };
+        const options = { day: "2-digit", month: "long", year: "numeric" };
         return new Date(dateString).toLocaleDateString('nl-NL', options);
     };
 

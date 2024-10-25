@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 const apiKey = import.meta.env.VITE_OPEN_WEATHER_API_KEY;
 
@@ -25,7 +25,7 @@ const useFetchWeatherData = async (latitude, longitude) => {
             daily: dailyForecast.data,
         };
     } catch (error) {
-        throw new Error('Fout bij het ophalen van weergegevens: ' + error.message);
+        throw new Error("Fout bij het ophalen van weergegevens: " + error.message);
     }
 };
 

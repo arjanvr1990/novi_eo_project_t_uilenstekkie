@@ -1,5 +1,4 @@
-// useRandomRotation.js
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 const useRandomRotation = () => {
     const [rotation, setRotation] = useState(0);

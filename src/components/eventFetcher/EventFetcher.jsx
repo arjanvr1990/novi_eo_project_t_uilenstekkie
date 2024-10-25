@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import useFetchEvents from '../../hooks/useFetchEvents/useFetchEvents.js';
 import EventFilter from "../../components/EventFilter/EventFilter.jsx";
 import EventList from "../../components/EventList/EventList.jsx";
+import {filterEvents} from "../../helpers/eventFilterUtils/eventFilterUtils.js";
 
 const EventFetcher = () => {
     const API_KEY = import.meta.env.VITE_EVENT_FETCHER_API_KEY;
@@ -54,16 +55,7 @@ const EventFetcher = () => {
         }
     };
 
-    const filteredEvents = events.filter(event => {
-        const matchesArtist = event.name.toLowerCase().includes(searchTerm.toLowerCase());
-        const matchesSegment = selectedSegment ? event.classifications[0]?.segment.name === selectedSegment : true;
-        const matchesGenre = selectedGenres.size > 0 ? selectedGenres.has(event.classifications[0]?.genre.name) : true;
-
-        const eventDate = new Date(event.dates.start.localDate);
-        const matchesDate = (!startDate || eventDate >= new Date(startDate)) && (!endDate || eventDate <= new Date(endDate));
-
-        return matchesArtist && matchesSegment && matchesGenre && matchesDate;
-    });
+    const filteredEvents = filterEvents(events, searchTerm, selectedSegment, selectedGenres, startDate, endDate);
 
     return (
         <div>
