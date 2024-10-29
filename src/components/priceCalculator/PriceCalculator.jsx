@@ -1,9 +1,11 @@
 import "./PriceCalculator.css";
+import sharedStyles from "../../sharedStyles/sharedStyles.module.css";
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useRandomRotation from "../../hooks/useRandomRotation/useRandomRotation.js";
 import useRandomFont from "../../hooks/useRandomFont/useRandomFont.js";
 import pricesData from "../../data/prices.json";
+
 
 function PriceCalculator() {
     const navigate = useNavigate();
@@ -159,7 +161,7 @@ function PriceCalculator() {
 
             {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
 
-            <button type="button" onClick={handleReserve}>Reserveren</button>
+            <button className={sharedStyles.button} type="button" onClick={handleReserve}>Reserveren</button>
         </div>
     );
 }
