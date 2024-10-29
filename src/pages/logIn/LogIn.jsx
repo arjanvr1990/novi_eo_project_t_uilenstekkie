@@ -1,17 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import LoginForm from "../../components/loginForm/LoginForm.jsx";
-import CreateUser from "../../components/createUser/CreateUser.jsx";
-import ManageUsers from "../../components/manageUsers/ManageUsers.jsx";
 
 function LogIn() {
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [jwtToken, setJwtToken] = useState(null);
     const [loginError, setLoginError] = useState("");
+    const navigate = useNavigate();
 
     const handleLogin = async (username, password) => {
         try {
-
             const response = await axios.post("https://api.datavortex.nl/uilenstekkie/users/authenticate", {
                 username,
                 password
@@ -22,35 +19,23 @@ function LogIn() {
                 }
             });
 
-
-            setJwtToken(response.data.jwt.trim());
-            setIsAuthenticated(true);
+            const token = response.data.jwt.trim();
+            localStorage.setItem('token', token);
             setLoginError("");
+            navigate("/admin");
         } catch (error) {
             if (error.response && (error.response.status === 401 || error.response.status === 400)) {
-
                 setLoginError("Ongeldige gebruikersnaam of wachtwoord. Controleer uw gegevens en probeer het opnieuw.");
             } else {
-
                 setLoginError("Er is een fout opgetreden bij de authenticatie. Probeer het later opnieuw.");
             }
         }
     };
 
-
     return (
         <>
             <h2>Log In</h2>
-            {!isAuthenticated ? (
-                <>
-                    <LoginForm handleLogin={handleLogin} loginError={loginError} />
-                </>
-            ) : (
-                <>
-                    <CreateUser />
-                    <ManageUsers jwtToken={jwtToken} />
-                </>
-            )}
+            <LoginForm handleLogin={handleLogin} loginError={loginError} />
         </>
     );
 }

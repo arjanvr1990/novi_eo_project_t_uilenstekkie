@@ -43,7 +43,7 @@ function Navigation() {
                 <li>
                 <NavLink
                     className={({isActive}) => isActive === true ? "active-menu-link" : "default-menu-link"}
-                    to="/admin">
+                    to="/login">
                     🔑
             </NavLink>
             </li>

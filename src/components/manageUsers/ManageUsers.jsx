@@ -42,11 +42,12 @@ const ManageUsers = ({ jwtToken }) => {
                     {errorMessage && <div className="manage-users-error-message">{errorMessage}</div>}
                     <ul>
                         {users.map((user) => (
-                            <li key={user.username}>
-                                {user.username} - {user.email}
+                            <li key={user.id}>
+                                {user.id} - {user.username} - {user.email}
                             </li>
                         ))}
                     </ul>
+
                 </div>
             )}
         </div>

@@ -14,6 +14,8 @@ import Admin from "./pages/admin/Admin.jsx";
 import EventOverview from "./pages/eventOverview/EventOverview.jsx";
 import ActivitiesPage from "./pages/activitiesPage/ActivitiesPage.jsx";
 import LogIn from "./pages/logIn/LogIn.jsx";
+import PrivateRoute from "./components/privateRoute/PrivateRoute.jsx";
+import AuthProvider from "./context/authContext/AuthContext.jsx";
 
 
 
@@ -23,6 +25,7 @@ function App() {
             <div className="app-container">
             <Navigation />
             <Header />
+            <AuthProvider>
             <Routes>
                 <Route path="/" element={<Home />}/>
 
@@ -36,9 +39,10 @@ function App() {
                 <Route path="/events" element={<EventOverview/>}/>
                 <Route path="/weer" element={<Weather/>}/>
 
-                <Route path="/admin" element={<Admin/>}/>
+                <Route path="/admin" element={<PrivateRoute><Admin/></PrivateRoute>}/>
                 <Route path="/login" element={<LogIn/>}/>
             </Routes>
+            </AuthProvider>
             <Footer />
             </div>
         </>
