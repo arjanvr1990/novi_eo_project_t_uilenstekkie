@@ -1,0 +1,96 @@
+import React, { useState } from "react";
+import useAuthenticate from "../../hooks/useAuthenticate/useAuthenticate.js"
+import { handleError } from "../../helpers/handleError/handleError.js";
+import UserForm from "../../components/userForm/UserForm.jsx"
+import axios from "axios";
+
+const CreateUser = () => {
+    const [formData, setFormData] = useState({
+        username: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+        role: "USER",
+        authorities: [
+            {
+                authority: "USER"
+            }
+        ]
+    });
+    const [errorMessage, setErrorMessage] = useState("");
+    const [successMessage, setSuccessMessage] = useState("");
+    const { jwtToken, authenticate } = useAuthenticate();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setErrorMessage("");
+        setSuccessMessage("");
+
+        if (formData.password !== formData.confirmPassword) {
+            setErrorMessage("Wachtwoorden komen niet overeen. Probeer het opnieuw.");
+            return;
+        }
+        if (formData.password.length < 8) {
+            setErrorMessage("Wachtwoord moet minstens 8 tekens lang zijn.");
+            return;
+        }
+
+        try {
+            const authority = formData.role;
+            const { confirmPassword, role, ...userData } = formData;
+            userData.authorities = [{ authority }];
+
+            const response = await axios.post("https://api.datavortex.nl/uilenstekkie/users", userData, {
+                headers: {
+                    "accept": "*/*",
+                    "Content-Type": "application/json",
+                    "X-Api-Key": import.meta.env.VITE_NOVI_BACKEND_API_KEY
+                }
+            });
+            console.log("Response data:", response.data);
+            setSuccessMessage("Gebruiker succesvol aangemaakt!");
+            setFormData({
+                username: "",
+                email: "",
+                password: "",
+                confirmPassword: "",
+                role: "USER",
+                authorities: [
+                    {
+                        authority: "USER"
+                    }
+                ]
+            });
+        } catch (error) {
+            setErrorMessage(handleError(error));
+        }
+    };
+
+    const handleChange = (e) => {
+        const { name, value, type, checked } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: type === "checkbox" ? checked : value,
+        }));
+    };
+
+    return (
+        <div>
+            <h2>Maak een nieuwe gebruiker aan</h2>
+            <UserForm
+                formData={formData}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+                buttonText="Create User"
+            />
+            {errorMessage && (
+                <div className="create-user-error-message">{errorMessage}</div>
+            )}
+            {successMessage && (
+                <div className="create-user-success-message">{successMessage}</div>
+            )}
+        </div>
+    );
+};
+
+export default CreateUser;
