@@ -36,10 +36,10 @@ const ManageUsers = ({ jwtToken }) => {
         <div>
             <h2>Gebruikers Beheren</h2>
             {!showUsers ? (
-                <button onClick={() => setShowUsers(true)}>Toon Gebruikers</button>
+                <button className="button" onClick={() => setShowUsers(true)}>Toon Gebruikers</button>
             ) : (
                 <div>
-                    {errorMessage && <div className="manage-users-error-message">{errorMessage}</div>}
+                    {errorMessage && <div className="errorMessage">{errorMessage}</div>}
                     <ul>
                         {users.map((user) => (
                             <li key={user.id}>

@@ -1,10 +1,10 @@
 .log-in-form {
     margin: 5px;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
 }
 
 .inlog-form {
@@ -19,7 +19,6 @@
 }
 
 .log-in-field input {
-    margin: 20px;
     width: 300px;
 }
 

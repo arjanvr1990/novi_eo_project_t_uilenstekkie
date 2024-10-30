@@ -21,7 +21,7 @@ const LoginForm = ({ handleLogin, loginError }) => {
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         placeholder="Username"
-                        className={sharedStyles.inputField}
+                        className="inputField"
                     />
                     <input
                         type="password"
@@ -29,10 +29,10 @@ const LoginForm = ({ handleLogin, loginError }) => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="Password"
-                        className={sharedStyles.inputField}
+                        className="inputField"
                     />
                 </div>
-                <button className={sharedStyles.button} type="submit">Login</button>
+                <button className="button" type="submit">Login</button>
             </form>
             {loginError && (
                 <div className="login-error-message">{loginError}</div>

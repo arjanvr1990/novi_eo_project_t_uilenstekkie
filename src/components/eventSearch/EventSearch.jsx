@@ -22,7 +22,7 @@ const EventSearch = ({ events, loading, error }) => {
     return (
         <div>
             {loading && <p>Evenementen worden geladen...</p>}
-            {error && <p>{error}</p>}
+            {error && <p className="errorMessage">{error}</p>}
             {!loading && !error && (
                 <>
                     <EventFilters
