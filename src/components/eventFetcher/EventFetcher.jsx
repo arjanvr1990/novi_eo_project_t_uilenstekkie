@@ -73,7 +73,7 @@ const EventFetcher = () => {
                 segments={segments}
             />
             {loading && <p>Evenementen worden geladen...</p>}
-            {error && <p>{error}</p>}
+            {error && <p className="errorMessage">{error}</p>}
             <EventList filteredEvents={filteredEvents} />
         </div>
     );

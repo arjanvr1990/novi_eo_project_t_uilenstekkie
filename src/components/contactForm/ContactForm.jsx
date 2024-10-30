@@ -4,7 +4,7 @@ import useFormField from "../../hooks/useFormField/useFormField.jsx"
 import emailjs from "emailjs-com";
 import useRandomRotation from "../../hooks/useRandomRotation/useRandomRotation.js";
 import useRandomFont from "../../hooks/useRandomFont/useRandomFont.js";
-import sharedStyles from "../../sharedStyles/sharedStyles.module.css";
+
 
 
 function ContactForm() {
@@ -61,15 +61,15 @@ function ContactForm() {
     };
 
     return (
-        <div className={sharedStyles.box} style={{
+        <div className="contact-form-container" style={{
             transform: `rotate(${rotation}deg)`,
             transition: "transform 0.3s ease",
             fontFamily: randomFont,
         }}>
             <h2>Contactformulier</h2>
             <form className="contact-form" onSubmit={handleSubmit}>
-                {errorMessage && <p className={sharedStyles.errorMessage}>{errorMessage}</p>}
-                {successMessage && <p className={sharedStyles.succesMessage}>{successMessage}</p>}
+                {errorMessage && <p className="errorMessage">{errorMessage}</p>}
+                {successMessage && <p className="succesMessage">{successMessage}</p>}
                 <div className="contact-form-input-container">
                     {firstName.inputField}
                     {middleName.inputField}
@@ -82,7 +82,7 @@ function ContactForm() {
                 <div className="contact-form-input-container">
                     {message.inputField}
                 </div>
-                <button className={sharedStyles.button} type="submit">Verstuur</button>
+                <button className="button" type="submit">Verstuur</button>
             </form>
         </div>
     );

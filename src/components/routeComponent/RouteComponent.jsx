@@ -38,7 +38,7 @@ const RouteComponent = ({ startCoordinates, endCoordinates, profile }) => {
     return (
         <div>
             {loading && <p>Laden...</p>}
-            {error && <p style={{ color: 'red' }}>{error}</p>}
+            {error && <p className="errorMessage">{error}</p>}
             {routeData && routeData.routes && routeData.routes.length > 0 && (
                 <RouteInfo routeData={routeData} onNavigate={handleNavigate} />
             )}
