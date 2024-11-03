@@ -28,7 +28,7 @@ function App() {
             <Header />
             <AuthProvider>
             <Routes>
-                <Route path="/" element={<Home />}/>
+                <Route path="/home" element={<Home />}/>
 
                 <Route path="/omgeving" element={<Surroundings />}/>
                 <Route path="/activities/:id" element={<ActivitiesPage />} />
