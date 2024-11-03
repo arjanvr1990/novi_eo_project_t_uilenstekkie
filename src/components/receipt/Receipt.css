@@ -1,6 +1,6 @@
 .receipt {
     font-family: var(--font-family-receipt);
-    background-color: var(--background-color);
+    background-color: var(--background-color-in-box);
     border: var(--border-main);
     border-radius: var(--border-radius);
     padding: 20px;

@@ -5,7 +5,7 @@
     border: var(--border-main);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-    background-color: var(--background-color);
+    background-color: var(--background-color-in-box);
     position: relative;
     top: 20%;
 }

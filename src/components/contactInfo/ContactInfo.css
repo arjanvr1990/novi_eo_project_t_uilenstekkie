@@ -21,7 +21,7 @@
     border: var(--border-main);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-    background-color: var(--background-color);
+    background-color: var(--background-color-in-box);
     padding: 20px;
     margin-bottom: 20px;
     overflow: auto;

@@ -1,5 +1,4 @@
 import "./PriceCalculator.css";
-import sharedStyles from "../../sharedStyles/sharedStyles.module.css";
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useRandomRotation from "../../hooks/useRandomRotation/useRandomRotation.js";

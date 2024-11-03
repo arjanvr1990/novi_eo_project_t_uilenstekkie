@@ -64,23 +64,23 @@ li {
 
 :root {
   /*colors*/
-  --text-color: black;
-  --text-color-2: darkgreen;
-  --text-color-footer: white;
+  --text-color: rgb(49, 49, 49);
+  --text-color-2: rgb(1, 65, 7 );
+  --text-color-footer: rgb(253, 249, 249);
 
-  --hover-text-color: green;
+  --hover-text-color: rgb(7, 159, 20);
 
-  --background-color: #fff;
-  --background-color-in-box: white;
-  --background-color-messages: red;
+  --background-color: rgb(253, 249, 249);
+  --background-color-in-box: rgb(248, 246, 245);
+  --background-color-messages: rgb(251, 47, 3);
 
-  --border-color: #ccc;
+  --border-color: rgb(134, 135, 135);
 
 
   /*button*/
-  --button-background-color: darkgreen;
-  --button-hover-background-color: #28a745;
-  --button-text-color: white;
+  --button-background-color: rgb(1, 65, 7 );
+  --button-hover-background-color: rgb(43, 130, 50);
+  --button-text-color: rgb(253, 249, 249);
 
   /*box*/
   --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
@@ -104,11 +104,11 @@ li {
 
 /*error/succes messages*/
 .errorMessage {
-  color: red;
+  color: rgb(251, 47, 3);
 }
 
 .succesMessage {
-  color: green;
+  color: rgb(7, 159, 20);
 }
 
 /*input fields*/

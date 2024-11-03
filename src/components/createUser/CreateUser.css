@@ -3,6 +3,6 @@
     padding: 20px;
     border: var(--border-main);
     border-radius: var(--border-radius);
-    background-color: var(--background-color);
+    background-color: var(--background-color-in-box);
     box-shadow: var(--box-shadow);
 }

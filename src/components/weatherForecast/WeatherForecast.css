@@ -3,7 +3,7 @@
     padding: 15px;
     border: var(--border-main);
     border-radius: var(--border-radius);
-    background-color: var(--background-color);
+    background-color: var(--background-color-in-box);
     box-shadow: var(--box-shadow);
 }
 
@@ -31,7 +31,7 @@
     margin: 0 5px;
     border: var(--border-main);
     border-radius: 5px;
-    background-color: var(--background-color-in-box);
+    background-color: var(--background-color);
     transition: transform 0.2s;
     flex: 1 0 calc(20% - 10px);
     box-sizing: border-box;
