@@ -33,7 +33,7 @@ function Navigation() {
                         <NavLink
                             className={({isActive}) => isActive === true ? "active-menu-link" : "default-menu-link"}
                             to="/contact">
-                            <h3>Tarieven</h3>
+                            <h3>Contact</h3>
                         </NavLink>
                     </li>
                 </ul>
