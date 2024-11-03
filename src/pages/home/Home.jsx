@@ -23,17 +23,45 @@ function Home() {
             />
             <div className="polaroid-wrapper">
                 <div className="container-polaroids">
-                    <Polaroid image={zunderdorp} title="Omgeving" alt="default img" link="/omgeving" />
-                    <Polaroid image={receptie} title="Tarieven" alt="default img" link="/tarieven" />
+                    <Polaroid
+                        image={zunderdorp}
+                        title="Omgeving"
+                        alt="afbeelding zunderdorp"
+                        link="/omgeving" />
+                    <Polaroid
+                        image={receptie}
+                        title="Tarieven"
+                        alt="receptie camping"
+                        link="/tarieven" />
                     {loading ? (
-                        <Polaroid image={defaultImg} title="Weerbericht" alt="Loading..." link="/weer" />
+                        <Polaroid
+                            image={defaultImg}
+                            title="Weerbericht"
+                            alt="Loading..."
+                            link="/weer" />
                     ) : error ? (
-                        <Polaroid image={defaultImg} title="Weerbericht" alt="Error" link="/weer" />
+                        <Polaroid
+                            image={defaultImg}
+                            title="Weerbericht"
+                            alt="Error"
+                            link="/weer" />
                     ) : (
-                        <Polaroid image={weatherImage} title="Weerbericht" alt="Weer" link="/weer" />
+                        <Polaroid
+                            image={weatherImage}
+                            title="Weerbericht"
+                            alt="Weer foto"
+                            link="/weer" />
                     )}
-                    <Polaroid image={inge} title="Foto's" alt="default img" link="/fotos" />
-                    <Polaroid image={eef} title="Contact" alt="default img" link="/contact" />
+                    <Polaroid
+                        image={inge}
+                        title="Foto's"
+                        alt="gast op de camping met haar camper"
+                        link="/fotos" />
+                    <Polaroid
+                        image={eef}
+                        title="Contact"
+                        alt="gast op de camping met haar camper"
+                        link="/contact" />
 
                 </div>
             </div>

@@ -1,10 +1,15 @@
 .weather-forecast {
     margin: 20px;
     padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: var(--border-main);
+    border-radius: var(--border-radius);
+    background-color: var(--background-color-in-box);
+    box-shadow: var(--box-shadow);
+}
+
+.weather-forecast h3 {
+    color: var(--text-color-2);
+    margin: 10px;
 }
 
 .forecast-slider {
@@ -24,9 +29,9 @@
 .forecast-item {
     padding: 10px;
     margin: 0 5px;
-    border: 1px solid #ddd;
+    border: var(--border-main);
     border-radius: 5px;
-    background-color: #fff;
+    background-color: var(--background-color);
     transition: transform 0.2s;
     flex: 1 0 calc(20% - 10px);
     box-sizing: border-box;
@@ -38,23 +43,22 @@
 }
 
 .forecast-temp {
-    font-size: 1.5em;
-    color: #333;
+    font-size: 24px;
     margin: 5px 0;
 }
 
 .forecast-description {
     margin: 0;
-    color: #666;
+    color: var(--text-color-2);
 }
 
 .arrow {
     background-color: transparent;
     border: none;
-    font-size: 2em;
+    font-size: 42px;
     cursor: pointer;
     user-select: none;
-    color: black;
+    color: var(--text-color-2);
 }
 
 .forecast-icon {

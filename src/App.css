@@ -5,21 +5,54 @@
 
 * {
   box-sizing: border-box;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   position: relative;
   display: flex;
   flex-direction: column;
-  font-family: Arial, sans-serif;
+  font-family: var(--font-family-default);
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
-  color: #1a1a1a;
-  z-index: var(--z-bacground-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  list-style-type: none;
+
 }
+
+h1,h2,h3,h4 {
+  text-align: center;
+}
+
+h1{
+
+}
+
+h2{
+  font-size: 32px;
+  font-weight: bold;
+}
+
+h3{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+h4{
+  font-size: 20px;
+  font-weight: normal;
+}
+
+h5{
+  font-size: 16px;
+}
+
+p {
+ font-size: 16px;
+}
+
 
 .app-container {
   max-width: 1200px;
@@ -30,14 +63,82 @@ li {
 }
 
 :root {
-  --z-bacground-color: -10;
+  /*colors*/
+  --text-color: rgb(49, 49, 49);
+  --text-color-2: rgb(1, 65, 7 );
+  --text-color-footer: rgb(253, 249, 249);
 
-  --z-background: -1;
-  --z-content: 1;
-  --z-modal: 10;
-  --z-tooltip: 100;
+  --hover-text-color: rgb(7, 159, 20);
+
+  --background-color: rgb(253, 249, 249);
+  --background-color-in-box: rgb(248, 246, 245);
+  --background-color-messages: rgb(251, 47, 3);
+
+  --border-color: rgb(134, 135, 135);
+
+
+  /*button*/
+  --button-background-color: rgb(1, 65, 7 );
+  --button-hover-background-color: rgb(43, 130, 50);
+  --button-text-color: rgb(253, 249, 249);
+
+  /*box*/
+  --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+
+  /*borders*/
+  --border-main: 1px solid var(--border-color);
+  --border-receipt: 1px dashed var(--border-color);
+  --border-active-link: 1px solid var(--hover-text-color);
+  --border-default-link: 1px solid transparent;
+
+/*border radius*/
+  --border-radius: 5px;
+
+
+  /*font styles*/
+  --font-family-default: Arial, sans-serif;
+  --font-family-main: "Poor Story", sans-serif;
+  --font-family-receipt: "Courier Prime", monospace;
 }
 
+
+/*error/succes messages*/
+.errorMessage {
+  color: rgb(251, 47, 3);
+}
+
+.succesMessage {
+  color: rgb(7, 159, 20);
+}
+
+/*input fields*/
+.inputField {
+  padding: 10px;
+  margin: 5px;
+  border: var(--border-main);
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  background-color: var(--background-color);
+  color: black;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/*button*/
+.button {
+  font-size: 24px;
+  margin: 20px;
+  padding: 10px;
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background: var(--button-hover-background-color);
+}
 
 
 

@@ -5,7 +5,7 @@ import { AuthContext } from '../../context/AuthContext/AuthContext.jsx';  // Zor
 function PrivateRoute({ children }) {
     const { isAuth } = useContext(AuthContext);
 
-    // Als isAuth niet waar is, wordt de gebruiker doorgestuurd naar de login-pagina
+
     return isAuth ? children : <Navigate to="/login" />;
 }
 

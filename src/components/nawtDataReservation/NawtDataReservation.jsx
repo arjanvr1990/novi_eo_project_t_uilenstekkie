@@ -1,4 +1,4 @@
-import "./NawtData.css";
+import "./NawtDataReservation.css";
 import React, { useState } from "react";
 import useRandomRotation from "../../hooks/useRandomRotation/useRandomRotation.js";
 import useRandomFont from "../../hooks/useRandomFont/useRandomFont.js";
@@ -7,7 +7,7 @@ import emailjs from "emailjs-com";
 import {useLocation} from "react-router-dom";
 
 
-function NawtData() {
+function NawtDataReservation() {
     const location = useLocation();
     const reservationDetails = location.state.reservationDetails;
     const rotation = useRandomRotation();
@@ -98,7 +98,7 @@ function NawtData() {
             transition: "transform 0.3s ease",
             fontFamily: randomFont,
         }}>
-            <h3>Reserveer</h3>
+            <h2>Reserveer:</h2>
             <form className="nawt-data-form" onSubmit={handleSubmit}>
                 {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
                 {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
@@ -126,11 +126,11 @@ function NawtData() {
                     {departureDate.inputField}
                 </div>
                 <p className="disclaimer">*de reservering is actief wanneer u een bevestigingsmail krijgt van uw reservering</p>
-                <button className="nawt-data-button" type="submit">Reserveer</button>
+                <button className="button" type="submit">Reserveer</button>
             </form>
         </div>
     );
 }
 
-export default NawtData;
+export default NawtDataReservation;
 

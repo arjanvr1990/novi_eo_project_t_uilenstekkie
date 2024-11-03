@@ -2,10 +2,10 @@
     max-width: 1000px;
     margin: 200px 50px;
     padding: 20px; ]
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-    background-color: #fff;
+    border: var(--border-main);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    background-color: var(--background-color-in-box);
     background-size: cover;
     font-size: 24px;
 }
@@ -23,22 +23,8 @@
 .price-calculator input[type="checkbox"]{
     margin: 20px;
     padding: 10px;
-    color: #1a1a1a;
-    background-color: transparent;
-    border: 1px none #dddddd;
-    border-radius: 4px;
 }
 
-.price-calculator input[type="number"]{
-    font-size: 24px;
-    width: 80px;
-}
-
-.price-calculator input[type="radio"],
-.price-calculator input[type="checkbox"]{
-    transform: scale(1.5);
-    color: darkgreen;
-}
 
 .person-calculator label {
     display: flex;
@@ -54,20 +40,20 @@
 
 
 .price-calculator label {
+    display: flex;
+    align-items: center;
     margin: 5px 0;
-    color: #555;
+    color: var(--text-color);
 }
 
 
 .price-calculator h2 {
     text-align: center;
-    color: darkgreen;
+    color: var(--text-color-2);
 }
 
 
 
 
 
-.price-calculator button:hover {
-    background-color: darkolivegreen;
-}
+

@@ -16,7 +16,7 @@ function PriceSetter() {
     const handleSavePrices = () => {
         const jsonString = JSON.stringify(prices, null, 2);
         console.log(jsonString);
-        alert("Prijzen zijn opgeslagen! (Simulatie)");
+        alert("Prijzen zijn opgeslagen!");
     };
 
     return (
@@ -33,11 +33,12 @@ function PriceSetter() {
                                 value={prices[key] || ""}
                                 onChange={handlePriceChange}
                                 step="0.10"
+                                className="inputField"
                             />
                         </label>
                     </div>
                 ))}
-                <button type="submit">Opslaan</button>
+                <button className="button" type="submit">Opslaan</button>
             </form>
         </div>
     );

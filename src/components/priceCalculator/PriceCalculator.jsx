@@ -1,5 +1,4 @@
 import "./PriceCalculator.css";
-import sharedStyles from "../../sharedStyles/sharedStyles.module.css";
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useRandomRotation from "../../hooks/useRandomRotation/useRandomRotation.js";
@@ -27,19 +26,19 @@ function PriceCalculator() {
         let price = 0;
 
         switch (vehicle) {
-            case 'Camper tot 5m':
+            case "Camper tot 5m":
                 price += prices.smallCamper || 0;
                 break;
-            case 'Camper tot 6m':
+            case "Camper tot 6m":
                 price += prices.largeCamper || 0;
                 break;
-            case 'Caravan tot 6m':
+            case "Caravan tot 6m":
                 price += prices.caravan || 0;
                 break;
-            case 'Tent Groot':
+            case "Tent Groot":
                 price += prices.largeTent || 0;
                 break;
-            case 'Tent Klein':
+            case "Tent Klein":
                 price += prices.smallTent || 0;
                 break;
             default:
@@ -66,11 +65,11 @@ function PriceCalculator() {
 
     const handleReserve = () => {
         if (!vehicle || adults < 1) {
-            setErrorMessage('Je moet een kampeermiddel selecteren en minstens 1 volwassene invoeren.');
+            setErrorMessage("Je moet een kampeermiddel selecteren en minstens 1 volwassene invoeren.");
             return;
         }
 
-        setErrorMessage('');
+        setErrorMessage("");
 
         const reservationData = {
             vehicle,
@@ -99,7 +98,7 @@ function PriceCalculator() {
             <form>
                 <h2>Tarieven:</h2>
                 <ul>
-                    {['Camper tot 5m', 'Camper tot 6m', 'Caravan tot 6m', 'Tent Groot', 'Tent Klein'].map(item => (
+                    {["Camper tot 5m", "Camper tot 6m", "Caravan tot 6m", "Tent Groot", "Tent Klein"].map(item => (
                         <li key={item}>
                             <label>
                                 <input
@@ -107,6 +106,7 @@ function PriceCalculator() {
                                     value={item}
                                     checked={vehicle === item}
                                     onChange={(e) => setVehicle(e.target.value)}
+                                    className="inputField"
                                 />
                                 {item}
                             </label>
@@ -119,6 +119,7 @@ function PriceCalculator() {
                         type="checkbox"
                         checked={hasCar}
                         onChange={() => setHasCar(!hasCar)}
+                        className="inputField"
                     />
                     Wel of geen auto (parkeren)
                 </label>
@@ -131,6 +132,7 @@ function PriceCalculator() {
                             min="1"
                             value={adults}
                             onChange={(e) => setAdults(Number(e.target.value))}
+                            className="inputField"
                         />
                     </label>
                 </div>
@@ -143,6 +145,7 @@ function PriceCalculator() {
                             min="0"
                             value={children}
                             onChange={(e) => setChildren(Number(e.target.value))}
+                            className="inputField"
                         />
                     </label>
                 </div>
@@ -152,6 +155,7 @@ function PriceCalculator() {
                         type="checkbox"
                         checked={electricity}
                         onChange={() => setElectricity(!electricity)}
+                        className="inputField"
                     />
                     Gebruik maken van elektriciteit
                 </label>
@@ -159,9 +163,9 @@ function PriceCalculator() {
 
             <h2>Totaal Prijs: € {totalPrice} per nacht</h2>
 
-            {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+            {errorMessage && <p className="errorMessage">{errorMessage}</p>}
 
-            <button className={sharedStyles.button} type="button" onClick={handleReserve}>Reserveren</button>
+            <button className="button" type="button" onClick={handleReserve}>Reserveren</button>
         </div>
     );
 }

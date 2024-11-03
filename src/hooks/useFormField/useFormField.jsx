@@ -9,7 +9,7 @@ const useFormField = (type, initialValue, placeholder, className = " ") => {
             {/*{placeholder}:*/}
             <input
                 type={type}
-                className={`data-input ${className}`}
+                className={`inputField ${className}`}
                 value={value}
                 placeholder={placeholder}
                 onChange={(e) => setValue(e.target.value)}

@@ -1,3 +1,4 @@
+import "./CreateUser.css";
 import React, { useState } from "react";
 import useAuthenticate from "../../hooks/useAuthenticate/useAuthenticate.js"
 import { handleError } from "../../helpers/handleError/handleError.js";
@@ -75,8 +76,8 @@ const CreateUser = () => {
     };
 
     return (
-        <div>
-            <h2>Maak een nieuwe gebruiker aan</h2>
+        <div className="create-user-box">
+            <h3>Maak een nieuwe gebruiker aan</h3>
             <UserForm
                 formData={formData}
                 handleChange={handleChange}

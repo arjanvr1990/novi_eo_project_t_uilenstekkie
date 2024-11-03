@@ -1,28 +1,18 @@
 .receipt {
-
-    font-family: 'Courier Prime', monospace;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    font-family: var(--font-family-receipt);
+    background-color: var(--background-color-in-box);
+    border: var(--border-main);
+    border-radius: var(--border-radius);
     padding: 20px;
     width: 300px;
     margin: 20px auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--box-shadow);
 }
 
-.receipt h1, .receipt h2 {
-    text-align: center;
-    margin: 0;
-}
-
-.receipt ul {
-    list-style-type: none;
-    padding: 0;
-}
 
 .receipt li {
     padding: 5px 0;
-    border-bottom: 1px dashed #ccc;
+    border-bottom: var(--border-receipt);
 }
 
 .receipt li:last-child {
@@ -31,7 +21,6 @@
 
 .receipt .total {
     font-weight: bold;
-    font-size: 1.2em;
     text-align: center;
     margin-top: 10px;
 }

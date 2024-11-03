@@ -1,11 +1,7 @@
-
-
-
 .custom-footer {
     position: relative;
     color: white;
     margin-top: 100px;
-
 }
 
 .image-container {
@@ -18,7 +14,7 @@
     width: 100%;
     height: auto;
     border-radius: 5px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    box-shadow: var(--box-shadow);
 }
 
 .content-wrapper {
@@ -30,7 +26,7 @@
     justify-content: space-around;
     width: 60%;
     margin: 0 auto;
-    color: white;
+    color: var(--text-color-footer);
 }
 
 
@@ -43,21 +39,20 @@
 
 .content-wrapper li {
     margin-bottom: 10px;
-    /*margin-left: 100px;*/
     text-align: center;
-    font-family: 'Poor Story', sans-serif;
+    font-family: var(--font-family-main);
     font-weight: normal;
     color: white;
 }
 
 .content-wrapper a {
     text-decoration: none;
-    color: white;
+    color: var(--text-color-footer);
 
 }
 
 .content-wrapper li a:hover {
-    color: darkgreen;
+    color: var(--hover-text-color);
 }
 
 
