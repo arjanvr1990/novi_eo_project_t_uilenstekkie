@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const useFetchEvents = (API_KEY) => {
     const [events, setEvents] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState('');
+    const [error, setError] = useState("");
     const [segments, setSegments] = useState([]);
     const [uniqueGenres, setUniqueGenres] = useState([]);
 
@@ -23,14 +23,14 @@ const useFetchEvents = (API_KEY) => {
 
                     const filteredEvents = fetchedEvents.filter(event => {
                         const segmentName = event.classifications[0]?.segment.name;
-                        return segmentName !== 'Miscellaneous';
+                        return segmentName !== "Miscellaneous";
                     });
 
                     allFetchedEvents = [...allFetchedEvents, ...filteredEvents];
                     totalPages = response.data.page.totalPages;
                     page++;
                 } catch (error) {
-                    setError('Fout bij het ophalen van evenementen: ' + error.message);
+                    setError("Fout bij het ophalen van evenementen: " + error.message);
                     break;
                 }
             }

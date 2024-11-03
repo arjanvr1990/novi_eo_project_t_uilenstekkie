@@ -7,16 +7,14 @@ function Header() {
     return (
         <>
             <header className="custom-header">
-
-                {/*goede beschrijving afbeelding toevoegen*/}
-                <img className="header-image" src={header} alt="Beschrijving van de afbeelding"  />
+                <img className="header-image" src={header} alt="camping tavereel"  />
                 <div className="header-content">
                     <div className="logo-circle">
-                        <div className="text-top">Altijd een lekker plekkie...</div>
+                        <h4 className="text-top">Altijd een lekker plekkie...</h4>
                         <div className="logo">
                             <img src={logo} alt="Tent en uilen tekening" />
                         </div>
-                        <div className="text-bottom">... op camping 't Uilenstekkie</div>
+                        <h4 className="text-bottom">... op camping 't Uilenstekkie</h4>
                     </div>
                 </div>
             </header>

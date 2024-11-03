@@ -22,11 +22,12 @@ const EventFilter = ({
                 placeholder="Zoek op artiest naam"
                 value={searchTerm}
                 onChange={handleSearchChange}
+                className="inputField"
             />
 
 
             <label>
-                <select value={selectedSegment} onChange={handleSegmentChange}>
+                <select className="inputField" value={selectedSegment} onChange={handleSegmentChange}>
                     <option value="" >Alle Segmenten</option>
                     {segments.map((segment, index) => (
                         <option key={index} value={segment}>{segment}</option>
@@ -42,6 +43,7 @@ const EventFilter = ({
                         name="startDate"
                         value={startDate}
                         onChange={handleDateChange}
+                        className="inputField"
                     />
                 </label>
                 <p>t/m</p>
@@ -51,6 +53,7 @@ const EventFilter = ({
                         name="endDate"
                         value={endDate}
                         onChange={handleDateChange}
+                        className="inputField"
                     />
                 </label>
             </div>

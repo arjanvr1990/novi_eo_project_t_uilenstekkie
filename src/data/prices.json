@@ -1,11 +1,11 @@
 {
-  "adult": 7.00,
-  "child": 3.00,
-  "smallTent": 2.50,
-  "largeTent": 5.00,
+  "Volwassenen": 7.00,
+  "Kind": 3.00,
+  "kleinTent": 2.50,
+  "groteTent": 5.00,
   "caravan": 7.50,
-  "smallCamper": 5.00,
-  "largeCamper": 7.50,
-  "electricity": 3.50,
-  "car": 1.00
+  "kleineCamper": 5.00,
+  "groteCamper": 7.50,
+  "electriciteit": 3.50,
+  "auto": 1.00
 }

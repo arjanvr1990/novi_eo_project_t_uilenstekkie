@@ -1,6 +1,6 @@
-import './Prices.css'
+import "./Prices.css";
 import React from "react";
-import PriceCalculator from "../../components/priceCalculator/PriceCalculator.jsx"
+import PriceCalculator from "../../components/priceCalculator/PriceCalculator.jsx";
 
 function Prices() {
     return (
