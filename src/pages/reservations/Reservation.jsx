@@ -1,6 +1,6 @@
 import "./Reservation.css"
 import Receipt from "../../components/receipt/Receipt.jsx";
-import NawtData from "../../components/nawtData/NawtData.jsx";
+import NawtDataReservation from "../../components/nawtDataReservation/NawtDataReservation.jsx";
 
 function Reservation({ reservationDetails }) {
     return (
@@ -9,7 +9,7 @@ function Reservation({ reservationDetails }) {
                  <Receipt/>
             </div>
 
-            <NawtData reservationDetails={reservationDetails} />
+            <NawtDataReservation reservationDetails={reservationDetails} />
         </div>
     );
 }

@@ -1,0 +1,32 @@
+.price-setter {
+    margin: 5px;
+    padding: 20px;
+    border: var(--border-main);
+    border-radius: var(--border-radius);
+    background-color: var(--background-color-in-box);
+    box-shadow: var(--box-shadow);
+    max-width: 500px;
+}
+
+
+.price-setter h2 {
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.price-setter form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.price-setter label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+

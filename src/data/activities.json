@@ -1,0 +1,48 @@
+[
+  {
+    "title": "Rijksmuseum",
+    "description": "Het Rijksmuseum in Amsterdam is een van de zestien rijksmusea in Nederland. De collectie biedt een overzicht van de Nederlandse kunst en geschiedenis met onder andere werken van 17e-eeuwse Nederlandse meesters als Rembrandt, Vermeer en Hals. Het museum is sinds 1885 gevestigd in het Rijksmuseumgebouw dat ontworpen werd door de Nederlandse architect Pierre Cuypers.",
+    "coordinates": [4.885218797249912, 52.360102405068645],
+    "img": [
+      "https://upload.wikimedia.org/wikipedia/commons/2/27/Amsterdam_-_Rijksmuseum.jpg"
+    ],
+    "profiles": ["cycling-regular"]
+  },
+  {
+    "title": "Amsterdam Centraal Station",
+    "description": "Station Amsterdam Centraal is het centraal station van de Nederlandse hoofdstad Amsterdam. Het is gebouwd tussen 1881 en 1889 naar ontwerp van Pierre Cuypers, Dolf van Gendt en L.J. Eijmer. Het station telt zes perrons die via drie dwarsgangen onder de 15 sporen bereikbaar zijn.",
+    "coordinates": [4.899410973584919, 52.38318619273895],
+    "img": [
+      "https://www.amsterdam.info/sitemedia/photos-800/amsterdam-transport-central-station-building-entrance-800x450.jpg"
+    ],
+    "profiles": ["cycling-regular"]
+  },
+  {
+    "title": "Volendam",
+    "description": "Volendam is een dorp in de gemeente Edam-Volendam, in de Nederlandse provincie Noord-Holland. In 2023 is Volendam een plaats met zo'n 22.580 inwoners. De plaats staat bekend om haar historische centrum, klederdracht en vissersboten.",
+    "coordinates": [5.070384529205916, 52.49513191466827],
+    "img": [
+      "https://dutchcountryside.com/wp-content/uploads/2020/10/bigstock-Architecture-Of-Volendam-Neth-210085288-scaled.jpg"
+    ],
+    "profiles": ["cycling-regular"]
+  },
+  {
+    "title": "Marken",
+    "description": "Marken is een voormalig eiland, in het Markermeer, dat sinds 1957 via een dam met het vasteland verbonden is. Het dorp behoort tot de gemeente Waterland in de Nederlandse provincie Noord-Holland. Het was een zelfstandige gemeente tot 1991. In dat jaar werd het grondgebied bij de gemeente Waterland gevoegd.",
+    "coordinates": [5.105631317825807, 52.45701920448859],
+    "img": [
+      "https://www.geobronnen.com/cms/wp-content/uploads/marken.jpg"
+    ],
+    "profiles": ["cycling-regular"]
+  },
+  {
+    "title": "Van Gogh Museum",
+    "description": "Het Van Gogh Museum is een aan de Nederlandse kunstschilder Vincent van Gogh gewijd museum, aan de Paulus Potterstraat en het Museumplein in Amsterdam, in het stadsdeel Zuid.",
+    "coordinates": [4.881328665058054, 52.35843925488857],
+    "img": [
+      "https://vereniging-rembrandt.ams3.cdn.digitaloceanspaces.com/production/images/_1200x630_crop_center-center_82_none/vangogh_200115_135311.jpg?mtime=1579096604"
+    ],
+    "profiles": ["cycling-regular"]
+  }
+
+]

@@ -1,0 +1,11 @@
+.active-status-display {
+    border: 1px solid indianred;
+    box-shadow: var(--box-shadow);
+    background-color: var(--background-color-messages);
+}
+
+.default-status-display {
+    border: none;
+    box-shadow: none;
+    background-color: var(--background-color);
+}

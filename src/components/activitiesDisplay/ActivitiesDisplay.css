@@ -1,0 +1,20 @@
+.activities-container {
+    padding: 20px;
+    text-align: center;
+    background-color: var(--background-color-in-box);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.activities-title {
+    margin-bottom: 20px;
+}
+
+.activity-img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+}
+
+.activities-container p {
+    margin: 20px;
+}
