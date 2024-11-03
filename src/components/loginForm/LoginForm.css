@@ -22,3 +22,9 @@
     width: 300px;
 }
 
+@media (max-width: 720px) {
+
+    .log-in-field {
+        flex-direction: column;
+    }
+}

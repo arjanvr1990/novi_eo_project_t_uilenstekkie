@@ -1,0 +1,18 @@
+.manager-user-box {
+    margin: 5px;
+    padding: 20px;
+    background-color: var(--background-color-in-box);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+
+.users-info {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.users-info:last-child {
+    border-bottom: none;
+}

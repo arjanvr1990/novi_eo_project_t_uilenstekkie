@@ -12,7 +12,7 @@ const LoginForm = ({ handleLogin, loginError }) => {
     };
 
     return (
-        <div className={sharedStyles.box}>
+        <div className="log-in-form">
             <form className="inlog-form" onSubmit={handleSubmit}>
                 <div className="log-in-field">
                     <input
