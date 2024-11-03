@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React from "react";
 
 const RouteInfo = ({ routeData, onNavigate }) => {
     const formatDistance = (meters) => (meters / 1000).toFixed(2) + ' km';
@@ -12,13 +11,13 @@ const RouteInfo = ({ routeData, onNavigate }) => {
     return (
         <div>
             <h3>Fietsroute Gegevens:</h3>
-            <p>Afstand: {formatDistance(routeData.routes[0].summary.distance)}</p>
-            <p>Duur: {formatDuration(routeData.routes[0].summary.duration)}</p>
+            <h4>Afstand: {formatDistance(routeData.routes[0].summary.distance)}</h4>
+            <h4>Duur: {formatDuration(routeData.routes[0].summary.duration)}</h4>
 
 
-            {/* Navigatie knoppen */}
-            <button onClick={() => onNavigate('google')}>Navigeren met Google Maps</button>
-            <button onClick={() => onNavigate('apple')}>Navigeren met Apple Maps</button>
+
+            <button className="button" onClick={() => onNavigate("google")}>Navigeren met Google Maps</button>
+            <button className="button" onClick={() => onNavigate("apple")}>Navigeren met Apple Maps</button>
         </div>
     );
 };

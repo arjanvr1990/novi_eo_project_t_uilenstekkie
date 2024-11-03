@@ -1,17 +1,19 @@
 .polaroid-container {
-    background-color: white;
+    background-color: var(--background-color-in-box);
     padding: 10px;
     margin: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--box-shadow);
     display: inline-block;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border: var(--border-main);
+    border-radius: var(--border-radius);
     width: 350px;
-    max-height: 450px;
+    max-height: 480px;
     overflow: hidden;
-    transition: transform 0.3s ease, z-index 0.3s ease;
 }
 
+.polaroid-container h3 {
+    margin-bottom: 5px;
+}
 
 .polaroid-img-container {
     overflow: hidden;
@@ -21,6 +23,7 @@
 .polaroid-img {
     width: 100%;
     height: auto;
+    max-height: 400px;
     display: block;
 }
 
@@ -28,7 +31,7 @@
 .polaroid-quote {
     text-align: center;
     margin-top: 10px;
-    color: #333;
+    color: var(--text-color);
 }
 
 

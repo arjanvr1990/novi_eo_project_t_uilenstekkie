@@ -1,20 +1,11 @@
-.status-display {
-    margin: 5px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+.active-status-display {
+    border: 1px solid indianred;
+    box-shadow: var(--box-shadow);
+    background-color: var(--background-color-messages);
 }
 
-.status-display h2 {
-    margin-bottom: 10px;
-}
-
-.status-display p {
-    font-size: 34px;
-    font-style: italic;
-    color: #333; : flex;
-    align-items: center;
-    justify-content: center;
+.default-status-display {
+    border: none;
+    box-shadow: none;
+    background-color: var(--background-color);
 }

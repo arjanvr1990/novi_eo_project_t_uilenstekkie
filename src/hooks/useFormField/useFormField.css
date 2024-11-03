@@ -1,46 +1,29 @@
 .data-label {
     display: flex;
     flex-direction: column;
-    margin: 5px 0;
-    color: #555;
 }
 
-.data-input {
-    padding: 10px;
-    border: 1px solid #dddddd;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: #fff;
-    color: black;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-.data-input.short {
+.inputField.short {
     width: 100px;
 }
 
-.data-input.medium {
+.inputField.medium {
     width: 200px;
 }
 
-.data-input.long {
+.inputField.long {
     width: 300px;
 }
 
-.data-input.house-number {
+.inputField.house-number {
     width: 70px;
 }
 
-.data-input.zip-code {
+.inputField.zip-code {
     width: 120px;
 }
 
-.data-input.message {
+.inputField.message {
     width: 100%;
     height: 200px;
 }
-
-/*textarea {*/
-/*    text-align: left;*/
-/*    vertical-align: top;*/
-/*}*/

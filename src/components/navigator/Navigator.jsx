@@ -6,47 +6,47 @@ function Navigation() {
     return (
         <nav>
             <div className="nav-container">
-                {/*<h4>🏕️ Mini Camping 't Uilenstekkie</h4>*/}
+
 
                 <ul className="nav-items">
                     <li>
                         <NavLink
                             className={({isActive}) => isActive === true ? "active-menu-link" : "default-menu-link"}
                             to="/">
-                            Home
+                            <h3>Home</h3>
                         </NavLink>
                     </li>
                     <li><NavLink
                         className={({isActive}) => isActive === true ? "active-menu-link" : "default-menu-link"}
                         to="/omgeving">
-                        Omgeving
+                        <h3>Omgeving</h3>
                     </NavLink>
                     </li>
                     <li>
                         <NavLink
-                        className={({isActive}) => isActive === true ? "active-menu-link" : "default-menu-link"}
-                        to="/tarieven">
-                        Tarieven
-                    </NavLink>
+                            className={({isActive}) => isActive === true ? "active-menu-link" : "default-menu-link"}
+                            to="/tarieven">
+                            <h3>Tarieven</h3>
+                        </NavLink>
                     </li>
                     <li>
                         <NavLink
-                        className={({isActive}) => isActive === true ? "active-menu-link" : "default-menu-link"}
-                        to="/contact">
-                        Contact
-                    </NavLink>
+                            className={({isActive}) => isActive === true ? "active-menu-link" : "default-menu-link"}
+                            to="/contact">
+                            <h3>Tarieven</h3>
+                        </NavLink>
                     </li>
                 </ul>
 
             </div>
             <ul className="nav-items-log-in">
                 <li>
-                <NavLink
-                    className={({isActive}) => isActive === true ? "active-menu-link" : "default-menu-link"}
-                    to="/admin">
-                    🔑
-            </NavLink>
-            </li>
+                    <NavLink
+                        className={({isActive}) => isActive === true ? "active-menu-link" : "default-menu-link"}
+                        to="/login">
+                        🔑
+                    </NavLink>
+                </li>
             </ul>
 
 

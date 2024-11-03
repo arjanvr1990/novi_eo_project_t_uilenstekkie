@@ -6,6 +6,7 @@ import useRandomRotation from "../../hooks/useRandomRotation/useRandomRotation.j
 import useRandomFont from "../../hooks/useRandomFont/useRandomFont.js";
 
 
+
 function ContactForm() {
     const [errorMessage, setErrorMessage] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
@@ -45,7 +46,6 @@ function ContactForm() {
 
         sendEmail(contactData)
             .then(() => {
-                // Reset form fields
                 firstName.setValue("");
                 middleName.setValue("");
                 lastName.setValue("");
@@ -68,8 +68,8 @@ function ContactForm() {
         }}>
             <h2>Contactformulier</h2>
             <form className="contact-form" onSubmit={handleSubmit}>
-                {errorMessage && <p className="error-message">{errorMessage}</p>}
-                {successMessage && <p className="success-message">{successMessage}</p>}
+                {errorMessage && <p className="errorMessage">{errorMessage}</p>}
+                {successMessage && <p className="succesMessage">{successMessage}</p>}
                 <div className="contact-form-input-container">
                     {firstName.inputField}
                     {middleName.inputField}
@@ -82,7 +82,7 @@ function ContactForm() {
                 <div className="contact-form-input-container">
                     {message.inputField}
                 </div>
-                <button className="contact-form-button" type="submit">Verstuur</button>
+                <button className="button" type="submit">Verstuur</button>
             </form>
         </div>
     );

@@ -10,7 +10,6 @@ function Footer() {
 
         <footer className="custom-footer">
             <div className="image-container">
-                {/*<img className="img-footer" src={footer} alt="Uil en camping"/>*/}
                 <picture>
                     <source media="(max-width: 950px)" srcSet={testMedium} />
                     <img className="img-footer" src={footer} alt="Beschrijving van de afbeelding" />

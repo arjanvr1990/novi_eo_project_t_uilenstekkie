@@ -6,8 +6,6 @@ const ActivitiesPage = () => {
     return (
         <div>
             <ActivitiesDisplay />
-
-
         </div>
     );
 };

@@ -1,31 +1,20 @@
 .activities-container {
     padding: 20px;
     text-align: center;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--background-color-in-box);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
 }
 
 .activities-title {
-    font-size: 2em;
     margin-bottom: 20px;
-    font-weight: bold;
-}
-
-.activity-card {
-    margin: 20px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 15px;
-    transition: transform 0.3s ease;
-}
-
-.activity-card:hover {
-    transform: rotate(2deg);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .activity-img {
     max-width: 100%;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
+}
+
+.activities-container p {
+    margin: 20px;
 }

@@ -1,0 +1,30 @@
+.log-in-form {
+    margin: 5px;
+    padding: 20px;
+    border: var(--border-main);
+    border-radius: var(--border-radius);
+    background-color: var(--background-color-in-box);
+    box-shadow: var(--box-shadow);
+}
+
+.inlog-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.log-in-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.log-in-field input {
+    width: 300px;
+}
+
+@media (max-width: 720px) {
+
+    .log-in-field {
+        flex-direction: column;
+    }
+}

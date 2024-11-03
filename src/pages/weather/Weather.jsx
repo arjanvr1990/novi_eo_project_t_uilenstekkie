@@ -7,6 +7,6 @@ function Weather() {
             <WeatherOverview />
         </>
     );
-};
+}
 
 export default Weather;

@@ -1,45 +1,12 @@
-/*.contact-form-container {*/
-/*    max-width: 700px;*/
-/*    max-height: 500px;*/
-/*    border: 1px solid #ccc;*/
-/*    border-radius: 8px;*/
-/*    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);*/
-/*    background-color: #fff;*/
-/*    padding: 20px;*/
-/*    margin-bottom: 20px;*/
-/*}*/
-
-
-/*.contact-form {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    gap: 15px;*/
-/*}*/
-
-/*.error-message {*/
-/*    color: red;*/
-/*}*/
-
-/*.success-message {*/
-/*    color: green;*/
-/*}*/
-
-/*.contact-form-input-container {*/
-/*    display: flex;*/
-/*    gap: 15px;*/
-/*}*/
-
-
 .contact-form-container {
     max-width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-    background-color: #fff;
+    border: var(--border-main);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    background-color: var(--background-color-in-box);
     padding: 20px;
-    /*margin: 100px;*/
-    width: 100%; /* Ensure full width */
-    overflow: auto; /* Allow scrolling if necessary */
+    width: 100%;
+    overflow: auto;
 }
 
 .contact-form {
@@ -48,25 +15,18 @@
     gap: 15px;
 }
 
-textarea {
-    width: 100%; /* Zorg ervoor dat het de volledige breedte benut */
-    height: 100px; /* Of pas de hoogte aan zoals nodig */
-    padding: 10px; /* Voeg padding toe om ruimte te creëren */
-    box-sizing: border-box; /* Zorg ervoor dat padding wordt meegerekend in de totale breedte/hoogte */
-    resize: vertical; /* Sta alleen verticale resizing toe */
-    text-align: left; /* Zorg ervoor dat de tekst links uitgelijnd is */
-    vertical-align: top; /* Zorg ervoor dat de tekst bovenaan begint */
+
+.error-message {
+    color: red;
 }
 
-textarea::placeholder {
-    color: #aaa; /* Pas de kleur van de placeholder aan indien nodig */
-    opacity: 1; /* Zorg ervoor dat de placeholder goed zichtbaar is */
+.succes-message {
+    color: green;
 }
 
 
 @media (max-width: 768px) {
     .contact-form-container {
         padding: 15px;
-        /*margin: 40px;*/
     }
 }

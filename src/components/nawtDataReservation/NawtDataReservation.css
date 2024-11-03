@@ -2,11 +2,10 @@
     max-width: 800px;
     margin: 200px 20px;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-    background-color: #fff;
-    font-size: 24px;
+    border: var(--border-main);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    background-color: var(--background-color-in-box);
     position: relative;
     top: 20%;
 }
@@ -27,33 +26,14 @@
 }
 
 
-
-
 .nawt-data-input {
     padding: 10px;
-    border: 1px solid #dddddd;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: #fff;
-    color: black;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    border: var(--border-main);
+    border-radius: var(--border-radius);
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
 }
 
-
-.nawt-data-button {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: darkgreen;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.nawt-data-button:hover {
-    background-color: darkolivegreen;
-}
 
 .disclaimer {
     font-family: Arial, serif;

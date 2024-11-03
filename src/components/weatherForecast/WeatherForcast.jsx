@@ -1,11 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import './WeatherForecast.css';
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import "./WeatherForecast.css";
+import useRandomRotation from "../../hooks/useRandomRotation/useRandomRotation.js";
+import useRandomFont from "../../hooks/useRandomFont/useRandomFont.js";
 
 const WeatherForecast = ({ forecastData }) => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const [itemsToShow, setItemsToShow] = useState(5);
+
+    const rotation = useRandomRotation();
+    const randomFont = useRandomFont();
 
     useEffect(() => {
         const handleResize = () => {
@@ -20,11 +25,11 @@ const WeatherForecast = ({ forecastData }) => {
             }
         };
 
-        window.addEventListener('resize', handleResize);
+        window.addEventListener("resize", handleResize);
         handleResize();
 
         return () => {
-            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('' + "resize", handleResize);
         };
     }, []);
 
@@ -44,8 +49,12 @@ const WeatherForecast = ({ forecastData }) => {
     };
 
     return (
-        <div className="weather-forecast">
-            <h3>Weersvoorspelling</h3>
+        <div className="weather-forecast"
+             style={{
+                 transform: `rotate(${rotation}deg)`,
+                 transition: "transform 0.3s ease",
+             }}>
+            <h3 style={{fontFamily: randomFont}}>Weersvoorspelling</h3>
             <div className="forecast-slider">
                 <button className="arrow" onClick={handlePrev} disabled={currentIndex === 0}>❮</button>
                 <div className="forecast-display">
@@ -53,9 +62,9 @@ const WeatherForecast = ({ forecastData }) => {
                         <div key={index} className="forecast-item">
                             <p className="forecast-date">
                                 {new Date(forecast.dt * 1000).toLocaleString('nl-NL', {
-                                    weekday: 'short',
-                                    hour: '2-digit',
-                                    minute: '2-digit',
+                                    weekday: "short",
+                                    hour: "2-digit",
+                                    minute: "2-digit",
                                 })}
                             </p>
                             <img

@@ -1,31 +1,25 @@
 .contact-wrapper {
     display: flex;
-    flex-direction: row; /* Default layout is horizontal */
+    flex-direction: row;
     margin-top: 200px;
-    padding: 20px; /* Add padding for spacing */
-    gap: 20px; /* Space between components */
-    justify-content: space-between; /* Distribute space evenly */
-    /*flex-wrap: wrap; !* Allow wrapping on smaller screens *!*/
+    padding: 20px;
+    gap: 20px;
+    justify-content: space-between;
 }
 
-/*.contact-wrapper {*/
-/*    display: flex;*/
-/*    flex-direction: row;*/
-/*    margin-top: 200px;*/
-/*}*/
 
 .contact-info, .contact-form {
-    flex: 1 1 300px; /* Allow components to grow and shrink */
-    min-width: 300px; /* Minimum width to maintain usability */
-    max-width: 100%; /* Full width on smaller screens */
-    overflow: auto; /* Allow scrolling if content overflows */
+    flex: 1 1 300px;
+    min-width: 300px;
+    max-width: 100%;
+    overflow: auto;
 }
 
-/* Media Queries for Responsiveness */
+
 @media (max-width: 768px) {
     .contact-wrapper {
-        flex-direction: column; /* Stack components vertically */
-        margin-top: 100px; /* Reduce margin for smaller screens */
-        padding: 10px; /* Adjust padding */
+        flex-direction: column;
+        margin-top: 100px;
+        padding: 10px;
     }
 }
