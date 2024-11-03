@@ -16,6 +16,7 @@ import ActivitiesPage from "./pages/activitiesPage/ActivitiesPage.jsx";
 import LogIn from "./pages/logIn/LogIn.jsx";
 import PrivateRoute from "./components/privateRoute/PrivateRoute.jsx";
 import AuthProvider from "./context/authContext/AuthContext.jsx";
+import Pictures from "./pages/pictures/Pictures.jsx";
 
 
 
@@ -34,6 +35,7 @@ function App() {
 
                 <Route path="/tarieven" element={<Prices />}/>
                 <Route path="/Reserveren" element={<Reservation />}/>
+                <Route path="/fotos" element={<Pictures />}/>
                 <Route path="/contact" element={<Contact />}/>
 
                 <Route path="/events" element={<EventOverview/>}/>
