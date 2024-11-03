@@ -19,6 +19,7 @@ function StatusForm({ onSubmit }) {
                     value="available"
                     checked={!isFull}
                     onChange={() => setIsFull(false)}
+                    className="inputField"
                 />
                 Beschikbaar
             </label>
@@ -28,6 +29,7 @@ function StatusForm({ onSubmit }) {
                     value="full"
                     checked={isFull}
                     onChange={() => setIsFull(true)}
+                    className="inputField"
                 />
                 Vol
             </label>
@@ -41,11 +43,12 @@ function StatusForm({ onSubmit }) {
                             value={availableUntil}
                             onChange={(e) => setAvailableUntil(e.target.value)}
                             required
+                            className="inputField"
                         />
                     </label>
                 </div>
             )}
-            <button type="submit">Opslaan</button>
+            <button className="button" type="submit">Opslaan</button>
         </form>
     );
 }

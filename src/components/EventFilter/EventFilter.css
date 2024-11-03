@@ -2,7 +2,7 @@
     width: 95%;
     max-width: 1200px;
     background-color: var(--background-color);
-    border: var(--border);
+    border: var(--border-main);
     border-radius: var(--border-radius);
     padding: 20px;
     margin: 20px auto;

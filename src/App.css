@@ -5,19 +5,20 @@
 
 * {
   box-sizing: border-box;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   position: relative;
   display: flex;
   flex-direction: column;
-  font-family: Arial, sans-serif;
+  font-family: var(--font-family-default);
   margin: 0;
   padding: 0;
   background-color: var(--background-color);
   color: var(--text-color);
+  list-style-type: none;
 
 }
 
@@ -41,12 +42,17 @@ h3{
 
 h4{
   font-size: 20px;
+  font-weight: normal;
+}
 
+h5{
+  font-size: 16px;
 }
 
 p {
-
+ font-size: 16px;
 }
+
 
 .app-container {
   max-width: 1200px;
@@ -59,31 +65,41 @@ li {
 :root {
   /*colors*/
   --text-color: black;
-  --hover-text-color: green;
-  --background-color: #fff;
-  --border-color: #ccc;
+  --text-color-2: darkgreen;
   --text-color-footer: white;
 
+  --hover-text-color: green;
 
+  --background-color: #fff;
+  --background-color-in-box: white;
+  --background-color-messages: red;
+
+  --border-color: #ccc;
+
+
+  /*button*/
   --button-background-color: darkgreen;
   --button-hover-background-color: #28a745;
   --button-text-color: white;
 
   /*box*/
   --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-  --border: 1px solid var(--border-color);
+
+  /*borders*/
+  --border-main: 1px solid var(--border-color);
+  --border-receipt: 1px dashed var(--border-color);
+  --border-active-link: 1px solid var(--hover-text-color);
+  --border-default-link: 1px solid transparent;
 
 /*border radius*/
   --border-radius: 5px;
 
 
   /*font styles*/
+  --font-family-default: Arial, sans-serif;
   --font-family-main: "Poor Story", sans-serif;
-
-
+  --font-family-receipt: "Courier Prime", monospace;
 }
-
-
 
 
 /*error/succes messages*/
@@ -99,7 +115,7 @@ li {
 .inputField {
   padding: 10px;
   margin: 5px;
-  border: var(--border);
+  border: var(--border-main);
   border-radius: var(--border-radius);
   font-size: 16px;
   background-color: var(--background-color);
@@ -109,7 +125,8 @@ li {
 
 /*button*/
 .button {
-  margin-top: 20px;
+  font-size: 24px;
+  margin: 20px;
   padding: 10px;
   background-color: var(--button-background-color);
   color: var(--button-text-color);

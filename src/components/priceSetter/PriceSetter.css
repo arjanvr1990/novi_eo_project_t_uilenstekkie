@@ -1,56 +1,32 @@
 .price-setter {
     margin: 5px;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: var(--border-main);
+    border-radius: var(--border-radius);
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
     max-width: 500px;
 }
 
 
 .price-setter h2 {
     margin-bottom: 15px;
-    font-size: 24px;
-    color: #555;
+    color: var(--text-color);
 }
 
 .price-setter form {
     display: flex;
     flex-direction: column;
+
 }
 
 
 .price-setter label {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 10px;
-    font-size: 16px;
-    color: black;
 }
 
-.price-setter input[type="number"] {
-    width: 100px;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    color: black;
-    background: #dddddd;
-}
 
-.price-setter button {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
 
-.price-setter button:hover {
-    background-color: #45a049;
-}

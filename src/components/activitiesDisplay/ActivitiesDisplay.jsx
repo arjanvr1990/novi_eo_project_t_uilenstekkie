@@ -1,5 +1,5 @@
 import "./ActivitiesDisplay.css"
-import React from 'react';
+import React from "react";
 import activiteiten from "../../data/activities.json";
 import RouteComponent from "../../components/routeComponent/RouteComponent.jsx";
 import { useParams } from 'react-router-dom';
@@ -22,7 +22,7 @@ const ActivitiesDisplay = () => {
         <div className="activities-container"
              style={{
                  transform: `rotate(${rotation}deg)`,
-                 transition: 'transform 0.3s ease',
+                 transition: "transform 0.3s ease",
              }}>
             <h2 className="activities-title">{activity.title}</h2>
             <p>{activity.description}</p>

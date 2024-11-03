@@ -1,7 +1,7 @@
 .create-user-box {
     margin: 5px;
     padding: 20px;
-    border: var(--border);
+    border: var(--border-main);
     border-radius: var(--border-radius);
     background-color: var(--background-color);
     box-shadow: var(--box-shadow);

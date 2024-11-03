@@ -10,8 +10,8 @@ const WeatherOverview = () => {
     const [forecastData, setForecastData] = useState(null);
     const [error, setError] = useState(null);
 
-    const latitude = 52.3702;  // Amsterdam
-    const longitude = 4.8952;   // Amsterdam
+    const latitude = 52.41067461917328;
+    const longitude = 4.960928364417612;
 
     useEffect(() => {
         const getWeather = async () => {
@@ -36,7 +36,7 @@ const WeatherOverview = () => {
     }
 
     const currentTemp = weatherData.temp;
-    const feelsLikeTemp = weatherData.feels_like;
+    // const feelsLikeTemp = weatherData.feels_like;
     const weatherCondition = weatherData.weather?.[0]?.description || "Geen beschrijving";
     const windSpeed = weatherData.wind?.speed || 0;
     const uvIndex = weatherData.uvi || 0;
@@ -49,7 +49,7 @@ const WeatherOverview = () => {
 
     return (
         <div>
-            <WeatherCurrent weatherData={weatherData} />
+            <WeatherCurrent weatherData={weatherData}/>
 
             <WeatherAdvisory
                 windSpeed={windSpeed}
