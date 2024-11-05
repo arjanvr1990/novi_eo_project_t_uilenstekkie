@@ -1,4 +1,4 @@
-import fetchWeatherData from "../../helpers/useFetchWeatherData/fetchWeatherData.js";
+import fetchWeatherData from "../../helpers/fetchWeatherData/fetchWeatherData.js";
 import { useEffect, useState } from "react";
 import cloudyImg from "../../assets/wheater-api-images/cloudy.png";
 import foggyImg from "../../assets/wheater-api-images/foggy.png";

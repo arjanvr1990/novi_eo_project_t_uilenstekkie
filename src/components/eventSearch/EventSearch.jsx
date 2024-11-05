@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import EventFilter from "../eventFilter/EventFilter.jsx";
 import EventList from "../eventList/EventList.jsx";
 import { filterEvents } from "../../helpers/eventFilterUtils/eventFilterUtils.js";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const EventSearch = ({ events, loading, error }) => {
     const [searchTerm, setSearchTerm] = useState("");
