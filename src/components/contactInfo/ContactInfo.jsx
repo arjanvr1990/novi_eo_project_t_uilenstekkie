@@ -1,5 +1,4 @@
 import "./ContactInfo.css"
-import React from "react";
 import useRandomRotation from "../../hooks/useRandomRotation/useRandomRotation.js";
 import useRandomFont from "../../hooks/useRandomFont/useRandomFont.js";
 

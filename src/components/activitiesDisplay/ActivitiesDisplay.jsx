@@ -1,5 +1,4 @@
 import "./ActivitiesDisplay.css"
-import React from "react";
 import activiteiten from "../../data/activities.json";
 import RouteComponent from "../../components/routeComponent/RouteComponent.jsx";
 import { useParams } from 'react-router-dom';
@@ -12,7 +11,7 @@ const ActivitiesDisplay = () => {
 
 
     if (!activity) {
-        return <p>Activiteit niet gevonden.</p>;
+        return <p>Activiteit niet gevonden.</p>;q
     }
 
 

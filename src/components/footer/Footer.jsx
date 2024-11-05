@@ -18,7 +18,7 @@ function Footer() {
                 <div className="content-wrapper">
                     <nav className="navigation">
                         <ul>
-                            <li><a href="/home">Home</a></li>
+                            <li><a href="/">Home</a></li>
                             <li><a href="/omgeving">Omgeving</a></li>
                             <li><a href="/tarieven">Tarieven</a></li>
                             <li><a href="/contact">Contact</a></li>

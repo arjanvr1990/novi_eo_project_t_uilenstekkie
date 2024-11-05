@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./ManagerUser.css";
 import { handleError } from "../../helpers/handleError/handleError.js";
 import axios from "axios";
+import PropTypes from "prop-types";
 
 const ManageUsers = ({ jwtToken }) => {
     const [users, setUsers] = useState([]);
@@ -14,7 +15,7 @@ const ManageUsers = ({ jwtToken }) => {
         }
     }, [jwtToken, showUsers]);
 
-    // Fetch all users
+
     const fetchUsers = async (token) => {
         try {
             console.log("Fetching users with token:", token);
@@ -54,5 +55,10 @@ const ManageUsers = ({ jwtToken }) => {
         </div>
     );
 };
+
+ManageUsers.propTypes = {
+    jwtToken: PropTypes.string.isRequired,
+};
+
 
 export default ManageUsers;

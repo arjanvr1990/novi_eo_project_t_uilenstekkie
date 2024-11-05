@@ -12,7 +12,7 @@ function Navigation() {
                     <li>
                         <NavLink
                             className={({isActive}) => isActive === true ? "active-menu-link" : "default-menu-link"}
-                            to="/homegit">
+                            to="/">
                             <h3>Home</h3>
                         </NavLink>
                     </li>

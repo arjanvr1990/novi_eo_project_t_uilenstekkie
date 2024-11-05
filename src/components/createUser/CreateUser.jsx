@@ -1,9 +1,10 @@
 import "./CreateUser.css";
-import React, { useState } from "react";
+import { useState } from "react";
 import useAuthenticate from "../../hooks/useAuthenticate/useAuthenticate.js"
 import { handleError } from "../../helpers/handleError/handleError.js";
 import UserForm from "../../components/userForm/UserForm.jsx"
 import axios from "axios";
+import PropTypes from "prop-types";
 
 const CreateUser = () => {
     const [formData, setFormData] = useState({
@@ -92,6 +93,25 @@ const CreateUser = () => {
             )}
         </div>
     );
+};
+
+CreateUser.propTypes = {
+    jwtToken: PropTypes.string,
+    authenticate: PropTypes.func,
+};
+
+
+UserForm.propTypes = {
+    formData: PropTypes.shape({
+        username: PropTypes.string.isRequired,
+        email: PropTypes.string.isRequired,
+        password: PropTypes.string.isRequired,
+        confirmPassword: PropTypes.string.isRequired,
+        role: PropTypes.string.isRequired,
+    }).isRequired,
+    handleChange: PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+    buttonText: PropTypes.string.isRequired,
 };
 
 export default CreateUser;
