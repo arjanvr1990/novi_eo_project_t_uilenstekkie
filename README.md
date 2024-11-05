@@ -16,7 +16,7 @@ Deze applicatie is gebouwd met React en maakt gebruik van verschillende externe 
 
 **Bijzonderheden**: Het ontwerp is bewust eenvoudig gehouden om de uitstraling van een charmante campingwebsite te behouden, zoals gewenst door de eigenaar Dirk. Er is bijvoorbeeld geen optie om gebruikers inloggegevens te onthouden, omdat de frequentie van gebruik laag is en het voor korte administratieve handelingen voldoende is om ad hoc in te loggen.
 
-![Screenshot van de belangrijkste pagina van de applicatie](screenshot.png)
+![Screenshot van de homePage](img.png)
 
 ## Benodigdheden
 Om de applicatie te kunnen draaien, heb je het volgende nodig:
