@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./StatusForm.css";
+import PropTypes from "prop-types";
 
 function StatusForm({ onSubmit }) {
     const [isFull, setIsFull] = useState(false);
@@ -52,5 +53,10 @@ function StatusForm({ onSubmit }) {
         </form>
     );
 }
+
+StatusForm.propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+};
+
 
 export default StatusForm;

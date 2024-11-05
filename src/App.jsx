@@ -1,5 +1,4 @@
 import './App.css'
-import React from "react";
 import Home from "./pages/home/Home.jsx";
 import Surroundings from "./pages/surroundings/Surroundings.jsx";
 import Prices from "./pages/prices/Prices.jsx";

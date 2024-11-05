@@ -1,11 +1,10 @@
 import "./NawtDataReservation.css";
-import React, { useState } from "react";
+import { useState } from "react";
 import useRandomRotation from "../../hooks/useRandomRotation/useRandomRotation.js";
 import useRandomFont from "../../hooks/useRandomFont/useRandomFont.js";
 import useFormField from "../../hooks/useFormField/useFormField.jsx";
-import emailjs from "emailjs-com";
-import {useLocation} from "react-router-dom";
-
+import { useLocation } from "react-router-dom";
+import sendEmail from "../../helpers/sendEmail/sendEmail";
 
 function NawtDataReservation() {
     const location = useLocation();
@@ -30,12 +29,13 @@ function NawtDataReservation() {
     const [errorMessage, setErrorMessage] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
 
-    const sendEmail = (reservationData) => {
-        return emailjs.send("service_28tjxuw", "template_65l432s", reservationData, "Q2f_Z-nFSmyEkxdT1");
-    };
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_RESERVATION_ID;
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
 
         if (!firstName.value || !lastName.value || !street.value || !houseNumber.value || !city.value || !country.value || !email.value || !phone.value || !arrivalDate.value || !departureDate.value) {
             setErrorMessage("Vul alstublieft alle verplichte velden in.");
@@ -43,6 +43,7 @@ function NawtDataReservation() {
         }
 
         setErrorMessage("");
+
 
         const reservationData = {
             firstName: firstName.value,
@@ -67,7 +68,8 @@ function NawtDataReservation() {
             totalPrice: reservationDetails.totalPrice,
         };
 
-        sendEmail(reservationData)
+
+        sendEmail(reservationData, templateID)
             .then(() => {
 
                 firstName.setValue("");
@@ -90,7 +92,6 @@ function NawtDataReservation() {
                 setErrorMessage("Er is een fout opgetreden bij het verzenden van de e-mail.");
             });
     };
-
 
     return (
         <div className="nawt-data-container" style={{
@@ -133,4 +134,3 @@ function NawtDataReservation() {
 }
 
 export default NawtDataReservation;
-

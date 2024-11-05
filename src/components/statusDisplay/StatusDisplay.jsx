@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import "./StatusDisplay.css";
+import PropTypes from "prop-types";
 
 function StatusDisplay({ isFull, availableUntil, updateCampingStatus }) {
     useEffect(() => {
@@ -26,5 +27,12 @@ function StatusDisplay({ isFull, availableUntil, updateCampingStatus }) {
         </div>
     );
 }
+
+StatusDisplay.propTypes = {
+    isFull: PropTypes.bool.isRequired,
+    availableUntil: PropTypes.string.isRequired,
+    updateCampingStatus: PropTypes.func.isRequired,
+};
+
 
 export default StatusDisplay;

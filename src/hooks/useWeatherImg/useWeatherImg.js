@@ -1,4 +1,4 @@
-import useFetchWeatherData from "../../hooks/useFetchWeatherData/useFetchWeatherData.js";
+import fetchWeatherData from "../../helpers/useFetchWeatherData/fetchWeatherData.js";
 import { useEffect, useState } from "react";
 import cloudyImg from "../../assets/wheater-api-images/cloudy.png";
 import foggyImg from "../../assets/wheater-api-images/foggy.png";
@@ -28,7 +28,7 @@ const useWeatherImg = () => {
     useEffect(() => {
         const getWeather = async () => {
             try {
-                const data = await useFetchWeatherData(latitude, longitude);
+                const data = await fetchWeatherData(latitude, longitude);
                 const description = data.current.weather[0].main; // Toegang tot de weersconditie
                 const imageUrl = weatherImages[description] || sunnyImg; // Fallback naar sunnyImg
                 setWeatherImage(imageUrl);

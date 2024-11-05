@@ -2,7 +2,7 @@ import axios from "axios";
 
 const apiKey = import.meta.env.VITE_OPEN_WEATHER_API_KEY;
 
-const useFetchWeatherData = async (latitude, longitude) => {
+const fetchWeatherData = async (latitude, longitude) => {
     try {
 
         const currentWeather = await axios.get(
@@ -29,4 +29,4 @@ const useFetchWeatherData = async (latitude, longitude) => {
     }
 };
 
-export default useFetchWeatherData;
+export default fetchWeatherData;

@@ -1,4 +1,3 @@
-import React from "react";
 import "./Footer.css";
 import footer from "../../assets/footer/footer t uilenstekkie geknipt.png"
 import testMedium from "../../assets/background/cork-board2.png"

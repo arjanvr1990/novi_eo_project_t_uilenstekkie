@@ -11,7 +11,7 @@ const ActivitiesDisplay = () => {
 
 
     if (!activity) {
-        return <p>Activiteit niet gevonden.</p>;q
+        return <p>Activiteit niet gevonden.</p>;
     }
 
 

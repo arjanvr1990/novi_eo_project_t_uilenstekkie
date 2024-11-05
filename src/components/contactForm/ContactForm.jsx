@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./ContactForm.css";
 import useFormField from "../../hooks/useFormField/useFormField.jsx"
-import emailjs from "emailjs-com";
 import useRandomRotation from "../../hooks/useRandomRotation/useRandomRotation.js";
 import useRandomFont from "../../hooks/useRandomFont/useRandomFont.js";
+import sendEmail from "../../helpers/sendEmail/sendEmail.jsx";
 
 
 
@@ -23,13 +23,7 @@ function ContactForm() {
 
 
 
-    const sendEmail = (contactData) => {
-        const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-        const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-        return emailjs.send(serviceId, templateId, contactData, publicKey);
-    };
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT_ID;
 
 
     const handleSubmit = (e) => {
@@ -52,7 +46,7 @@ function ContactForm() {
             message: message.value,
         };
 
-        sendEmail(contactData)
+        sendEmail(contactData, templateID)
             .then(() => {
                 firstName.setValue("");
                 middleName.setValue("");

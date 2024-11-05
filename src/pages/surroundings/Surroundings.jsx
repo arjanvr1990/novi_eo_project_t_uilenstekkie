@@ -1,5 +1,4 @@
 import "./Surroundings.css";
-import React from "react";
 import Polaroid from "../../components/polaroid/Polaroid.jsx";
 import eventDefault from "../../assets/event-default.jpg"
 import activities from "../../data/activities.json";

@@ -1,4 +1,3 @@
-import React from "react";
 import { useLocation } from "react-router-dom";
 import "./Receipt.css";
 import useRandomRotation from "../../hooks/useRandomRotation/useRandomRotation.js";

@@ -1,9 +1,9 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import './Polaroid.css';
 import useRandomRotation from "../../hooks/useRandomRotation/useRandomRotation.js";
 import useRandomFont from "../../hooks/useRandomFont/useRandomFont.js";
 import defaultImg from "../../assets/img-default.png";
+import PropTypes from "prop-types";
 
 function Polaroid({ image, title, alt, link, date, name, quote }) {
     const rotation = useRandomRotation();
@@ -38,6 +38,22 @@ function Polaroid({ image, title, alt, link, date, name, quote }) {
         </Link>
     );
 }
+
+Polaroid.propTypes = {
+    image: PropTypes.string,
+    title: PropTypes.string,
+    alt: PropTypes.string,
+    link: PropTypes.string,
+    date: PropTypes.string,
+    name: PropTypes.string,
+    quote: PropTypes.string,
+};
+
+
+Polaroid.defaultProps = {
+    image: defaultImg,
+    link: "#",
+};
 
 export default Polaroid;
 
