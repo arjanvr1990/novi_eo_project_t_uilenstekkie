@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const useFetchEvents = (API_KEY) => {
+const fetchEvents = (API_KEY) => {
     const [events, setEvents] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
@@ -46,4 +46,4 @@ const useFetchEvents = (API_KEY) => {
     return { events, loading, error, segments, uniqueGenres };
 };
 
-export default useFetchEvents;
+export default fetchEvents;
