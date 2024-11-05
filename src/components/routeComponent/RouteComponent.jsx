@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import useRoute from "../../hooks/useRoute/useRoute.jsx";
 import RouteInfo from "../../components/routeInfo/RouteInfo.jsx";
+import { defaultCoordinates } from "../../config/config.js";
+import PropTypes from "prop-types";
 
 const RouteComponent = ({ startCoordinates, endCoordinates, profile }) => {
     const apiKey = import.meta.env.VITE_OPENROUTESERVICE_API_KEY;
     const { routeData, error, loading, getRoute } = useRoute(apiKey);
     const [routeFetched, setRouteFetched] = useState(false);
-    const defaultCoordinates = [4.960928364417612, 52.41067461917328];
     const startCoords = startCoordinates || defaultCoordinates;
 
     useEffect(() => {
@@ -44,6 +45,12 @@ const RouteComponent = ({ startCoordinates, endCoordinates, profile }) => {
             )}
         </div>
     );
+};
+
+RouteComponent.propTypes = {
+    startCoordinates: PropTypes.arrayOf(PropTypes.number),
+    endCoordinates: PropTypes.arrayOf(PropTypes.number).isRequired,
+    profile: PropTypes.string.isRequired,
 };
 
 export default RouteComponent;

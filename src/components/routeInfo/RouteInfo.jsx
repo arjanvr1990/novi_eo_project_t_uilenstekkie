@@ -1,4 +1,5 @@
-import React from "react";
+import "./RouteInfo.css";
+import PropTypes from "prop-types";
 
 const RouteInfo = ({ routeData, onNavigate }) => {
     const formatDistance = (meters) => (meters / 1000).toFixed(2) + ' km';
@@ -24,3 +25,16 @@ const RouteInfo = ({ routeData, onNavigate }) => {
 
 export default RouteInfo;
 
+RouteInfo.propTypes = {
+    routeData: PropTypes.shape({
+        routes: PropTypes.arrayOf(
+            PropTypes.shape({
+                summary: PropTypes.shape({
+                    distance: PropTypes.number.isRequired,
+                    duration: PropTypes.number.isRequired,
+                }).isRequired,
+            }).isRequired
+        ).isRequired,
+    }).isRequired,
+    onNavigate: PropTypes.func.isRequired,
+};

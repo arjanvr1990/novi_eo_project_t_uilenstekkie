@@ -1,5 +1,6 @@
-import React from "react";
+
 import "./UserForm.css"
+import PropTypes from "prop-types";
 
 const UserForm = ({ formData, handleChange, handleSubmit, buttonText }) => {
 
@@ -55,6 +56,19 @@ const UserForm = ({ formData, handleChange, handleSubmit, buttonText }) => {
             <button className="button" type="submit">{buttonText}</button>
         </form>
     );
+};
+
+UserForm.propTypes = {
+    formData: PropTypes.shape({
+        username: PropTypes.string.isRequired,
+        email: PropTypes.string.isRequired,
+        password: PropTypes.string.isRequired,
+        confirmPassword: PropTypes.string.isRequired,
+        role: PropTypes.string.isRequired,
+    }).isRequired,
+    handleChange: PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+    buttonText: PropTypes.string.isRequired,
 };
 
 export default UserForm;

@@ -20,7 +20,6 @@ const useFetchEvents = (API_KEY) => {
                     const response = await axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=${API_KEY}&city=Amsterdam&page=${page}&size=${size}`);
                     const fetchedEvents = response.data._embedded?.events || [];
 
-
                     const filteredEvents = fetchedEvents.filter(event => {
                         const segmentName = event.classifications[0]?.segment.name;
                         return segmentName !== "Miscellaneous";

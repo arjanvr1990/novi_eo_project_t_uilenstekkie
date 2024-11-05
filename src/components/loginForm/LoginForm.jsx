@@ -1,5 +1,6 @@
 import "./LoginForm.css";
-import React, { useState } from "react";
+import { useState } from "react";
+import PropTypes from "prop-types";
 
 
 const LoginForm = ({ handleLogin, loginError }) => {
@@ -39,6 +40,11 @@ const LoginForm = ({ handleLogin, loginError }) => {
             )}
         </div>
     );
+};
+
+LoginForm.propTypes = {
+    handleLogin: PropTypes.func.isRequired,
+    loginError: PropTypes.string,
 };
 
 export default LoginForm;

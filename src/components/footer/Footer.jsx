@@ -1,4 +1,3 @@
-import React from "react";
 import "./Footer.css";
 import footer from "../../assets/footer/footer t uilenstekkie geknipt.png"
 import testMedium from "../../assets/background/cork-board2.png"
@@ -18,10 +17,9 @@ function Footer() {
                 <div className="content-wrapper">
                     <nav className="navigation">
                         <ul>
-                            <li><a href="/home">Home</a></li>
+                            <li><a href="/">Home</a></li>
                             <li><a href="/omgeving">Omgeving</a></li>
                             <li><a href="/tarieven">Tarieven</a></li>
-                            <li><a href="/reserveren">Reserveren</a></li>
                             <li><a href="/contact">Contact</a></li>
                         </ul>
                     </nav>

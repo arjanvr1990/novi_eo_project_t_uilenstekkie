@@ -1,6 +1,6 @@
 import "./PriceSetter.css"
-import React, { useState } from "react";
 import pricesData from "../../data/prices.json";
+import {useState} from "react";
 
 function PriceSetter() {
     const [prices, setPrices] = useState(pricesData);

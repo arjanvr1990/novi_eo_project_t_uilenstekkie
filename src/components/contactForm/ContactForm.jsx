@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./ContactForm.css";
 import useFormField from "../../hooks/useFormField/useFormField.jsx"
-import emailjs from "emailjs-com";
 import useRandomRotation from "../../hooks/useRandomRotation/useRandomRotation.js";
 import useRandomFont from "../../hooks/useRandomFont/useRandomFont.js";
+import sendEmail from "../../helpers/sendEmail/sendEmail.jsx";
 
 
 
@@ -13,6 +13,7 @@ function ContactForm() {
     const rotation = useRandomRotation();
     const randomFont = useRandomFont();
 
+
     const firstName = useFormField("text", "", "Voornaam", "medium");
     const middleName = useFormField("text", "", "Tussenvoegsel", "short");
     const lastName = useFormField("text", "", "Achternaam", "long");
@@ -20,9 +21,10 @@ function ContactForm() {
     const phone = useFormField("tel", "", "Telefoonnummer", "long");
     const message = useFormField("textarea", "", "Bericht", "message");
 
-    const sendEmail = (contactData) => {
-        return emailjs.send("service_28tjxuw", "template_xotfyik", contactData, "Q2f_Z-nFSmyEkxdT1");
-    };
+
+
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT_ID;
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -44,7 +46,7 @@ function ContactForm() {
             message: message.value,
         };
 
-        sendEmail(contactData)
+        sendEmail(contactData, templateID)
             .then(() => {
                 firstName.setValue("");
                 middleName.setValue("");

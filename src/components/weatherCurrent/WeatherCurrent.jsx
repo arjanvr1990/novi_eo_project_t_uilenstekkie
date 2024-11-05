@@ -1,7 +1,7 @@
 import "./WeatherCurrent.css"
-import React from "react";
 import useRandomRotation from "../../hooks/useRandomRotation/useRandomRotation.js";
 import useRandomFont from "../../hooks/useRandomFont/useRandomFont.js";
+import PropTypes from "prop-types";
 
 const WeatherCurrent = ({ weatherData }) => {
 
@@ -50,5 +50,25 @@ const WeatherCurrent = ({ weatherData }) => {
         </div>
     );
 };
+
+WeatherCurrent.propTypes = {
+    weatherData: PropTypes.shape({
+        main: PropTypes.shape({
+            temp: PropTypes.number.isRequired,
+            feels_like: PropTypes.number.isRequired,
+            humidity: PropTypes.number.isRequired,
+        }).isRequired,
+        weather: PropTypes.arrayOf(
+            PropTypes.shape({
+                description: PropTypes.string.isRequired,
+                icon: PropTypes.string.isRequired,
+            })
+        ).isRequired,
+        wind: PropTypes.shape({
+            speed: PropTypes.number.isRequired,
+        }).isRequired,
+    }).isRequired,
+};
+
 
 export default WeatherCurrent;

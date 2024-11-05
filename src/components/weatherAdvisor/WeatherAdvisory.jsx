@@ -1,5 +1,4 @@
 import "./WeatheAdvisory.css";
-import React from "react";
 import Polaroid from "../polaroid/Polaroid";
 import windspeed5 from "../../assets/weather-cartoons/windspeed-les-than-5.jpeg";
 import windSpeed5Till10 from "../../assets/weather-cartoons/windspeed5Till10.jpg";
@@ -13,6 +12,7 @@ import thunderStorm from "../../assets/weather-cartoons/thunderstorm.jpg";
 import tempLessThan15 from "../../assets/weather-cartoons/tempLessThan15.jpg";
 import temp25plus from "../../assets/weather-cartoons/temp25plus.jpg";
 import dryWeather from "../../assets/weather-cartoons/dryWeather.jpg";
+import PropTypes from "prop-types";
 
 const WeatherAdvisory = ({ windSpeed, uvIndex, precipitationType, temperature, weatherCondition }) => {
 
@@ -153,5 +153,14 @@ const WeatherAdvisory = ({ windSpeed, uvIndex, precipitationType, temperature, w
         </div>
     );
 };
+
+WeatherAdvisory.propTypes = {
+    windSpeed: PropTypes.number.isRequired,
+    uvIndex: PropTypes.number.isRequired,
+    precipitationType: PropTypes.string.isRequired,
+    temperature: PropTypes.number.isRequired,
+    weatherCondition: PropTypes.string.isRequired,
+};
+
 
 export default WeatherAdvisory;

@@ -1,4 +1,3 @@
-import React from 'react';
 import ActivitiesDisplay from "../../components/activitiesDisplay/ActivitiesDisplay.jsx"
 
 

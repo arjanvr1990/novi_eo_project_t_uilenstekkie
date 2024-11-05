@@ -1,22 +1,23 @@
 import "./WeatherOverview.css";
-import React, { useEffect, useState } from "react";
-import useFetchWeatherData from "../../hooks/useFetchWeatherData/useFetchWeatherData";
+import { useEffect, useState } from "react";
+import fetchWeatherData from "../../helpers/useFetchWeatherData/fetchWeatherData.js";
 import WeatherCurrent from "../../components/weatherCurrent/WeatherCurrent.jsx";
 import WeatherForecast from "../../components/weatherForecast/WeatherForcast.jsx";
 import WeatherAdvisory from "../weatherAdvisor/WeatherAdvisory.jsx";
+import { defaultCoordinates } from "../../config/config.js";
 
 const WeatherOverview = () => {
     const [weatherData, setWeatherData] = useState(null);
     const [forecastData, setForecastData] = useState(null);
     const [error, setError] = useState(null);
 
-    const latitude = 52.41067461917328;
-    const longitude = 4.960928364417612;
+    const latitude = defaultCoordinates[1];
+    const longitude = defaultCoordinates[0];
 
     useEffect(() => {
         const getWeather = async () => {
             try {
-                const data = await useFetchWeatherData(latitude, longitude);
+                const data = await fetchWeatherData(latitude, longitude);
                 setWeatherData(data.current);
                 setForecastData(data.daily);
             } catch (err) {
@@ -36,7 +37,6 @@ const WeatherOverview = () => {
     }
 
     const currentTemp = weatherData.temp;
-    // const feelsLikeTemp = weatherData.feels_like;
     const weatherCondition = weatherData.weather?.[0]?.description || "Geen beschrijving";
     const windSpeed = weatherData.wind?.speed || 0;
     const uvIndex = weatherData.uvi || 0;

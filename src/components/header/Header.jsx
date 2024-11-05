@@ -1,4 +1,3 @@
-import React from "react";
 import "./Header.css";
 import header from "../../assets/banner/banner header t uilenstekkie geknipt.png";
 import logo from "../../assets/banner/t uillenstekkie logo.png";
