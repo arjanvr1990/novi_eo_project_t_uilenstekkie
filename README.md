@@ -16,7 +16,7 @@ Deze applicatie is gebouwd met React en maakt gebruik van verschillende externe 
 
 **Bijzonderheden**: Het ontwerp is bewust eenvoudig gehouden om de uitstraling van een charmante campingwebsite te behouden, zoals gewenst door de eigenaar Dirk. Er is bijvoorbeeld geen optie om gebruikers inloggegevens te onthouden, omdat de frequentie van gebruik laag is en het voor korte administratieve handelingen voldoende is om ad hoc in te loggen.
 
-![Screenshot van de homePage](img.png)
+![Screenshot van de homePage](ScreenShotApp.png)
 
 ## Benodigdheden
 Om de applicatie te kunnen draaien, heb je het volgende nodig:
@@ -38,7 +38,7 @@ Om de applicatie te kunnen draaien, heb je het volgende nodig:
    VITE_EMAILJS_USER_ID=YOUR_EMAILJS_USER_ID
    VITE_EMAILJS_TEMPLATE_RESERVATION_ID=YOUR_EMAILJS_TEMPLATE_RESERVATION_ID
    ```
-   **Het huidige .env bestand kan opgevraagd worden om een werkende app voor het nakijk proces
+   **Het huidige .env bestand kan opgevraagd worden, voor het nakijk proces.
 
 ## Installatie Instructies
 Volg de onderstaande stappen om de applicatie op je lokale machine te installeren en te runnen:
