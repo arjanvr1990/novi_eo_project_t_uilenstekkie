@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { AuthContext } from "../../context/authContext/AuthContext.jsx"; // Importeer AuthContext
+import { AuthContext } from "../../context/authContext/AuthContext.jsx";
 import "./Admin.css";
 import StatusForm from "../../components/statusForm/StatusForm.jsx";
 import StatusDisplay from "../../components/statusDisplay/StatusDisplay.jsx";
@@ -9,7 +9,7 @@ import CreateUser from "../../components/createUser/CreateUser.jsx";
 import ManageUsers from "../../components/manageUsers/ManageUsers.jsx";
 
 function Admin() {
-    const { jwtToken } = useContext(AuthContext); // Haal jwtToken uit de context
+    const { jwtToken } = useContext(AuthContext);
     const [campingStatus, updateCampingStatus] = useCampingStatus();
 
     const handleStatusSubmit = (status) => {
