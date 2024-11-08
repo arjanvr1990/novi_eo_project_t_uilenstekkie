@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import fetchWeatherData from "../../helpers/fetchWeatherData/fetchWeatherData.js";
 import WeatherCurrent from "../../components/weatherCurrent/WeatherCurrent.jsx";
 import WeatherForecast from "../../components/weatherForecast/WeatherForcast.jsx";
-import WeatherAdvisory from "../weatherAdvisor/WeatherAdvisory.jsx";
+import WeatherAdvisory from "../weatherAdvisory/WeatherAdvisory.jsx";
 import { defaultCoordinates } from "../../config/config.js";
 
 const WeatherOverview = () => {

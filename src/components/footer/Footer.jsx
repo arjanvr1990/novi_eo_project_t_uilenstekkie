@@ -1,6 +1,6 @@
 import "./Footer.css";
-import footer from "../../assets/footer/footer t uilenstekkie geknipt.png"
-import testMedium from "../../assets/background/cork-board2.png"
+import footer from "../../assets/footer/footer t uilenstekkie geknipt.png";
+import miniFooter from "../../assets/footer/Footer-mini.jpg";
 
 
 
@@ -10,7 +10,7 @@ function Footer() {
         <footer className="custom-footer">
             <div className="image-container">
                 <picture>
-                    <source media="(max-width: 950px)" srcSet={testMedium} />
+                    <source media="(max-width: 950px)" srcSet={miniFooter} />
                     <img className="img-footer" src={footer} alt="Beschrijving van de afbeelding" />
                 </picture>
 
