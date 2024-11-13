@@ -74,7 +74,7 @@ li {
   --background-color-in-box: rgb(248, 246, 245);
   --background-color-messages: rgb(251, 47, 3);
 
-  --border-color: rgb(134, 135, 135);
+
 
 
   /*button*/
@@ -90,6 +90,7 @@ li {
   --border-receipt: 1px dashed var(--border-color);
   --border-active-link: 1px solid var(--hover-text-color);
   --border-default-link: 1px solid transparent;
+  --border-color: rgb(134, 135, 135);
 
 /*border radius*/
   --border-radius: 5px;

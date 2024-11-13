@@ -121,7 +121,7 @@ function PriceCalculator() {
                         onChange={() => setHasCar(!hasCar)}
                         className="inputField"
                     />
-                    Wel of geen auto (parkeren)
+                    Auto (parkeren)
                 </label>
 
                 <div className="person-calculator">
